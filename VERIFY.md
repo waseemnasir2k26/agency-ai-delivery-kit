@@ -10,7 +10,7 @@ Run these again after every Claude Code update. Commands are relative to the mod
 | Module | Command | Result | Evidence |
 | --- | --- | --- | --- |
 | 01 | `python -c json.load(starter/.claude/settings.json)` | PASS | `{"permissions": {"defaultMode": "default"}}` |
-| 01 | `python check_01.py starter/` (offline HTML open-check, script in lead scratch) | PASS | 14/14: local links resolve (index 6, inbox 4), no template text, tel:+923000000000 = label "+92 300 0000000", 6 items/6 prices/2 reviews all SAMPLE, 44px rule on `#enquiry form + p a, footer a`, CLAUDE.md 10 lines, QA lines 1-6 |
+| 01 | `python check_01.py starter/` (offline HTML open-check) | PASS | 14/14: local links resolve (index 6, inbox 4), no template text, tel:+923000000000 = label "+92 300 0000000", 6 items/6 prices/2 reviews all SAMPLE, 44px rule on `#enquiry form + p a, footer a`, CLAUDE.md 10 lines, QA lines 1-6 |
 | 01 | `node --check starter/site.js` | PASS | syntax OK; no fetch/XHR/beacon/URL in site.js (nothing sent over the internet) |
 | 01 | `gitleaks dir 01-client-site-in-a-day` | PASS | no leaks found |
 | 01 | QA-CHECKLIST lines 1-6 by hand in Chrome at 375px | SKIPPED (manual, browser) | recorded episode result: all six pass on this copy |

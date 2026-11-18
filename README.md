@@ -76,3 +76,6 @@ https://github.com/waseemnasir2k26/lead-leak-audit
 ---
 
 MIT licensed. See `LICENSE`. © SkynetLabs.
+
+---
+Independent course material by SkynetLabs. Not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic.
