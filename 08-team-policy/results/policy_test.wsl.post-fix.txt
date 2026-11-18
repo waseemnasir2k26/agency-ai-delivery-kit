@@ -1,0 +1,29 @@
+# Recorded result (WSL2 lab, post-fix policy, the Claude Code release used for the recording). Sample output, not a result for your machine.
+policy_test.py  |  claude <version used for the recording>  |  managed file: /etc/claude-code/managed-settings.json
+FORCED TEST: tool calls are scripted (no model); every result below is Claude Code's own decision.
+
+preflight: kiran-core + kiran-noor loaded, noor-bookings connected, start mode=default
+
+T1a  project file loosens a rule (WebFetch example.com)   BLOCKED     PASS
+      └ Claude requested permissions to use WebFetch, but you haven't granted it yet.
+T1b  project file loosens a rule (git push)               BLOCKED     PASS
+      └ Claude requested permissions to use Bash, but you haven't granted it yet.
+T2a  file tool reads .env                                 BLOCKED     PASS
+      └ <tool_use_error>File is in a directory that is denied by your permission settings.</tool_use_error>
+T2b  script reads .env                                    BLOCKED     PASS
+      └ READ FAILED: PermissionError [Errno 13] Permission denied: '.env'
+T2c  script sends to example.com                          BLOCKED     PASS
+      └ SEND FAILED: URLError <urlopen error Tunnel connection failed: 403 user denied> <sandbox_violations> deny network-outbound example.com:443 (user deni…
+T3   sandbox required on this machine                     BLOCKED     PASS
+      └ refused to start: Refusing to start without a working sandbox (see sandbox.failIfUnavailable).
+T4a  unapproved marketplace                               BLOCKED     PASS
+      └ ✘ Failed to add marketplace: Marketplace source 'git:https://example.com/other-marketplace.git' (example.com) is blocked by enterprise policy. Allowe…
+T4b  unapproved connector                                 BLOCKED     PASS
+      └ Cannot add MCP server "blog-tool": not allowed by enterprise policy
+T4c  --plugin-dir sideload                                BLOCKED     PASS
+      └ --plugin-dir is disabled by your organization's managed settings (disableSideloadFlags). Plugins, custom agents, and MCP servers can only be loaded f…
+T5   auto mode unavailable                                BLOCKED     PASS
+      └ asked for auto; the call still needed a person (Claude requested permissions to use WebFetch, but you haven't granted it yet.) [init said default]
+
+10/10 PASS  |  0 NOT BLOCKED  |  0 ERRORED  |  run time 16 s
+[exit 0]

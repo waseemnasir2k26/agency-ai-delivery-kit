@@ -1,0 +1,10 @@
+run,client,setup,total_cost_usd_estimate,wall_seconds,num_turns,critic_verdict,checker_calls,status,result_subtype,credential,per_model_cost_usd
+A1-mehr-bakery,mehr-bakery,A,0.4938855999999999,55.3,1,REJECTED,1,done,success,subscription,"{""claude-opus-5-5"": 0.4938855999999999}"
+C1-mehr-bakery,mehr-bakery,C,0.10128951,34.6,1,REJECTED,1,done,success,subscription,"{""claude-haiku-5-5"": 0.004805210000000001, ""claude-sonnet-5-5"": 0.044380499999999996, ""claude-opus-5-5"": 0.0521038}"
+C2-mehr-bakery,mehr-bakery,C,0.10087576499999998,37.1,1,REJECTED,1,done,success,subscription,"{""claude-haiku-5-5"": 0.004853765, ""claude-sonnet-5-5"": 0.04486179999999999, ""claude-opus-5-5"": 0.0511602}"
+C3-mehr-bakery,mehr-bakery,C,0.065053165,38.9,1,REJECTED,2,done,success,subscription,"{""claude-haiku-5-5"": 0.004025365, ""claude-sonnet-5-5"": 0.0392484, ""claude-opus-5-5"": 0.021779399999999997}"
+D1-mehr-bakery,mehr-bakery,D,0.010600710000000001,27.9,1,REJECTED,1,done,success,subscription,"{""claude-haiku-5-5"": 0.010600710000000001}"
+D2-mehr-bakery,mehr-bakery,D,0.010759930000000001,34.8,1,REJECTED,1,done,success,subscription,"{""claude-haiku-5-5"": 0.010759930000000001}"
+D3-mehr-bakery,mehr-bakery,D,0.006630344999999999,33.2,1,APPROVED,2,done,success,subscription,"{""claude-haiku-5-5"": 0.006630344999999999}"
+STUCK1-mehr-bakery,mehr-bakery,STUCK,0.00792199,31.6,1,REJECTED,1,done,success,subscription,"{""claude-haiku-5-5"": 0.00792199}"
+STUCK2-mehr-bakery,mehr-bakery,STUCK,0.00706716,31.1,1,REJECTED,1,capped,error_max_budget_usd,subscription,"{""claude-haiku-5-5"": 0.00706716}"

@@ -1,0 +1,45 @@
+# OpenTelemetry Collector config for the Claude Code activity record (EXAMPLE).
+# Receives OTLP over HTTP (port 4318, matches OTEL_EXPORTER_OTLP_PROTOCOL=http/json in the managed file)
+# and gRPC (port 4317), prints a summary to the console and appends every record to a local JSON-lines file.
+# Run:  otelcol-contrib --config otel/collector-config.yaml
+# The kit's lab used lab/otel_sink.py (stdlib, no install) instead; this file is for a team collector.
+# Bind to 127.0.0.1 on a single machine; on a team host, put it behind your network rules and TLS.
+
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 127.0.0.1:4318
+      grpc:
+        endpoint: 127.0.0.1:4317
+
+processors:
+  batch: {}
+  # Drop identifiers you decided not to keep (see the detail logging decision form).
+  attributes/drop-ids:
+    actions:
+      - key: user.email
+        action: delete
+      - key: user.account_uuid
+        action: delete
+
+exporters:
+  debug:
+    verbosity: basic
+  file:
+    path: ./claude-code-activity.jsonl
+    rotation:
+      max_megabytes: 50
+      max_days: 30        # retention: set to what the decision form says
+      max_backups: 6
+
+service:
+  pipelines:
+    logs:
+      receivers: [otlp]
+      processors: [attributes/drop-ids, batch]
+      exporters: [debug, file]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [debug, file]

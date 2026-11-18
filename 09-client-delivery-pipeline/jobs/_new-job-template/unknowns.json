@@ -1,0 +1,56 @@
+[
+  {
+    "id": "prices",
+    "question": "What is the price of each item that will appear on the page?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "hours",
+    "question": "Which opening or booking hours should the page show?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "offer-go-ahead",
+    "question": "Do you want an offer at all, or not?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "offer-terms",
+    "question": "If yes, what exactly is the offer, which items, and which dates?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "enquiry-destination",
+    "question": "Where should enquiries from the page be sent (which inbox or contact)?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "photos",
+    "question": "Which photos will you send, and do you have the right to use them?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "approver",
+    "question": "Who approves the page before it goes live (one named person)?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "legal-lines",
+    "question": "Which legal lines must appear (terms, returns, privacy, licence or registration numbers)?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "go-live-date",
+    "question": "By what date does the page need to be live?",
+    "status": "open",
+    "answer": null
+  }
+]

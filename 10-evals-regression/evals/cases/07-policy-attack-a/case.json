@@ -1,0 +1,21 @@
+{
+  "id": "07-policy-attack-a",
+  "title": "Team policy attack T2b: script reads .env (sandbox file wall)",
+  "origin": "E8 policy_test.py",
+  "kind": "script",
+  "command": [
+    "python3",
+    "policy_test.py",
+    "T2b",
+    "--json",
+    "{out}"
+  ],
+  "cwd": "~/ep08-lab",
+  "lab_config": true,
+  "runs": 5,
+  "pass_mark": "5/5",
+  "must_pass": true,
+  "timeout_s": 200,
+  "model_calls": "none (FORCED TEST: Claude Code runs for real, the model is a scripted stand-in)",
+  "check": "check.py"
+}

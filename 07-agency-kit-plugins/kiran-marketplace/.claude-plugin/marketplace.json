@@ -1,0 +1,19 @@
+{
+  "name": "kiran-marketplace",
+  "owner": { "name": "Kiran Studio" },
+  "metadata": {
+    "description": "Kiran Studio's private plugin catalogue (fictional agency, synthetic data)."
+  },
+  "plugins": [
+    {
+      "name": "kiran-core",
+      "source": "./plugins/kiran-core",
+      "description": "Every project: client-report and pr-review skills, the critic agent, secret-firewall and commit-gate hooks."
+    },
+    {
+      "name": "kiran-noor",
+      "source": "./plugins/kiran-noor",
+      "description": "Noor Dental Clinic only: the noor-bookings MCP server (four read/draft tools)."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+.robot.env
+.claude/review.json
+reports/*
+!reports/.gitkeep
+__pycache__/

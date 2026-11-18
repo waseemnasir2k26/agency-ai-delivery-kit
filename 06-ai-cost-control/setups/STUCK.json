@@ -1,0 +1,2 @@
+{"setup": "STUCK", "label": "CONTROLLED TEST, WRONG ON PURPOSE: checker always FAILS (check-site.stuck.py), all Haiku", "main_model": "haiku", "claude_md": "trimmed", "checker": "stuck",
+ "agents": {"reader": ["haiku", "low"], "builder": ["haiku", "low"], "critic": ["haiku", "low"], "reporter": ["haiku", "low"]}}

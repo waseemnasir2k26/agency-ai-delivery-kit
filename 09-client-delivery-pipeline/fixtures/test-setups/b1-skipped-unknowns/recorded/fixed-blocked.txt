@@ -1,0 +1,4 @@
+$ python pipeline.py build --job sufi-winter
+  pre-flight: gate 1 SEND = approved · unknowns open = 1
+BLOCKED: 1 unknown(s) still open: price-velvet-kurta. Ask the client first. 0 agents started, 0 model calls.
+exit=1

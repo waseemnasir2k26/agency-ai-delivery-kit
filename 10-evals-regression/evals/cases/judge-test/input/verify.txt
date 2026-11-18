@@ -1,0 +1,7 @@
+# HANDCRAFTED TEST FILE · fictional data · verify.py output paired with report.md
+[sufi-threads] model says hours PASS       -> ACCEPTED
+[sufi-threads] model says phone PASS       -> ACCEPTED
+[sufi-threads] model says price PASS       -> REJECTED: quoted text is not on that page
+[sufi-threads] model says button PASS      -> ACCEPTED
+findings: 4 · accepted: 3 · rejected: 1
+VERDICT sufi-threads: NEEDS A PERSON (1 finding rejected)

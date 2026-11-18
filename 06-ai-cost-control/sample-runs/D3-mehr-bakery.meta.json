@@ -1,0 +1,112 @@
+{
+  "run_id": "D3-mehr-bakery",
+  "client": "mehr-bakery",
+  "job": "site-refresh",
+  "setup": "D",
+  "setup_label": "ALL HAIKU: judge on Haiku too, trimmed CLAUDE.md (CONTROLLED TEST)",
+  "status": "done",
+  "result_subtype": "success",
+  "exit_code": 0,
+  "critic_verdict": "APPROVED",
+  "permission_denials": [],
+  "wall_seconds": 33.2,
+  "caps": {
+    "max_budget_usd": 0.1,
+    "uncapped_test": false,
+    "max_turns": 25,
+    "timeout_seconds": 900,
+    "bg_wait_ceiling_ms": 0
+  },
+  "preflight": {
+    "checked": true,
+    "passed": true,
+    "problems": [],
+    "credential": "subscription",
+    "model": "claude-haiku-5-5",
+    "claude_code_version": "release used for the recording",
+    "loaded": {
+      "agents": [
+        "builder",
+        "critic",
+        "reader",
+        "reporter"
+      ],
+      "skills": [
+        "brand-voice",
+        "deploy-steps",
+        "pr-review"
+      ],
+      "workflow": true,
+      "hook": true
+    }
+  },
+  "checker_calls": 2,
+  "critic_note": "Checked sites/mehr-bakery/index.html against data/mehr-bakery.json. Hours: Mon-Sat 08:00-20:00 and Sun 10:00-14:00 match. Prices: Naan khatai (box) PKR 650, Rusk (pack) PKR 300, Fruit cake PKR 1200 all match. Phone placeholder +92 300 0000000 matches, and the page has no email address. I did not run check-site.py, so this verdict covers hours and prices only.",
+  "critic_mismatches": [],
+  "workflow_agents": [
+    {
+      "agent": "reporter",
+      "phase": "Report"
+    },
+    {
+      "agent": "builder",
+      "phase": "Build"
+    },
+    {
+      "agent": "critic",
+      "phase": "Critic"
+    },
+    {
+      "agent": "reader",
+      "phase": "Read"
+    }
+  ],
+  "reporter_text": "Report written to reports/mehr-bakery-site-refresh.md\n\nMehr Bakery site refresh: critic APPROVED and checker PASS (5/5). Two open items need confirmation before this is final.\n\n- Requested: winter hours (not in data/mehr-bakery.json, which has only Mon-Sat 08:00-20:00, Sun 10:00-14:00) and Fruit cake at PKR 1500 (data file shows PKR 1200).\n- Changed: sites/mehr-bakery/index.html.\n- Checker: PASS, 5/5.\n- Critic: APPROVED, no mismatches. It matched hours and prices against 1200, and did not run check-site.py.\n- Open: source the winter hours from the client; confirm the PKR 1500 price and update data/mehr-bakery.json.",
+  "agent_models": {
+    "reader": [
+      "haiku",
+      "low"
+    ],
+    "builder": [
+      "haiku",
+      "low"
+    ],
+    "critic": [
+      "haiku",
+      "low"
+    ],
+    "reporter": [
+      "haiku",
+      "low"
+    ]
+  },
+  "main_model": "haiku",
+  "claude_md": "trimmed",
+  "cost_basis_note": "LOCAL ESTIMATE AT API LIST PRICE (subscription login), NOT A BILL",
+  "command": [
+    "claude.EXE",
+    "-p",
+    "/site-refresh for client mehr-bakery",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--model",
+    "haiku",
+    "--allowedTools",
+    "Workflow(site-refresh),Read,Glob,Edit(sites/**),Edit(reports/**),Bash(python check-site.py *)",
+    "--append-system-prompt",
+    "You are running an unattended, measured job. Run the site-refresh workflow exactly once, wait for it, then reply with its result: the critic verdict and the report path. Do not edit files, re-run stages or fix anything yourself; a human reviews the report.",
+    "--permission-prompts",
+    "none",
+    "--max-budget-usd",
+    "0.1",
+    "--max-turns",
+    "25",
+    "--setting-sources",
+    "project,local",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--no-session-persistence"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "noor-bookings-test": {
+      "type": "stdio",
+      "command": "../.venv/Scripts/python.exe",
+      "args": [
+        "server.py"
+      ],
+      "env": {
+        "NOOR_API_TOKEN": "${NOOR_API_TOKEN}"
+      }
+    }
+  }
+}

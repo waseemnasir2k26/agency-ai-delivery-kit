@@ -1,0 +1,238 @@
+{
+ "run": "sample-run",
+ "jobs": [
+  {
+   "id": "report-mehr-bakery",
+   "title": "REPORT · Mehr Bakery",
+   "status": "DRAFT READY",
+   "model": "Haiku (pinned)",
+   "cost_usd": 0.0023,
+   "cap_usd": 0.1,
+   "time_s": 7.5,
+   "cap_s": 240,
+   "result": "report drafted · Episode 2 checks 4/4 passed",
+   "needs_decision": [
+    "Approve and send the Mehr Bakery weekly report (draft, not sent)"
+   ],
+   "risks": [],
+   "facts": {
+    "client": "Mehr Bakery",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "model_answered": [
+     "claude-haiku-5-5"
+    ],
+    "pinned_model_answered": true,
+    "draft": "runs/sample-run/reports/mehr-bakery.md"
+   }
+  },
+  {
+   "id": "report-sufi-threads",
+   "title": "REPORT · Sufi Threads",
+   "status": "DRAFT READY",
+   "model": "Haiku (pinned)",
+   "cost_usd": 0.0024,
+   "cap_usd": 0.1,
+   "time_s": 7.9,
+   "cap_s": 240,
+   "result": "report drafted · Episode 2 checks 4/4 passed",
+   "needs_decision": [
+    "Approve and send the Sufi Threads weekly report (draft, not sent)"
+   ],
+   "risks": [],
+   "facts": {
+    "client": "Sufi Threads",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "model_answered": [
+     "claude-haiku-5-5"
+    ],
+    "pinned_model_answered": true,
+    "draft": "runs/sample-run/reports/sufi-threads.md"
+   }
+  },
+  {
+   "id": "report-noor-dental",
+   "title": "REPORT · Noor Dental Clinic",
+   "status": "DRAFT READY",
+   "model": "Haiku (pinned)",
+   "cost_usd": 0.0023,
+   "cap_usd": 0.1,
+   "time_s": 6.6,
+   "cap_s": 240,
+   "result": "report drafted · Episode 2 checks 4/4 passed",
+   "needs_decision": [
+    "Approve and send the Noor Dental Clinic weekly report (draft, not sent)"
+   ],
+   "risks": [],
+   "facts": {
+    "client": "Noor Dental Clinic",
+    "checks_passed": 4,
+    "checks_total": 4,
+    "model_answered": [
+     "claude-haiku-5-5"
+    ],
+    "pinned_model_answered": true,
+    "draft": "runs/sample-run/reports/noor-dental.md"
+   }
+  },
+  {
+   "id": "watch-mehr-bakery",
+   "title": "SITE WATCH · Mehr Bakery",
+   "status": "NEEDS YOU",
+   "model": "Haiku (pinned)",
+   "cost_usd": 0.0028,
+   "cap_usd": 0.4,
+   "time_s": 25.6,
+   "cap_s": 480,
+   "result": "2 pages · verify.py: FAIL · Fruit cake: page PKR 1350, data PKR 1200",
+   "needs_decision": [
+    "Mehr Bakery website: Fruit cake: page PKR 1350, data PKR 1200 on /mehr-bakery/order.html. Decide which price is right; the agent does not change the site"
+   ],
+   "risks": [],
+   "facts": {
+    "client": "Mehr Bakery",
+    "pages_opened": 2,
+    "verdict": "FAIL",
+    "issues": [
+     "Fruit cake: page PKR 1350, data PKR 1200"
+    ],
+    "agent_stop": "completed",
+    "report": "runs/sample-run/watch-mehr-bakery/report.md"
+   }
+  },
+  {
+   "id": "watch-sufi-threads",
+   "title": "SITE WATCH · Sufi Threads",
+   "status": "PASS",
+   "model": "Haiku (pinned)",
+   "cost_usd": 0.0034,
+   "cap_usd": 0.4,
+   "time_s": 25.9,
+   "cap_s": 480,
+   "result": "4 pages opened · verify.py: PASS",
+   "needs_decision": [],
+   "risks": [],
+   "facts": {
+    "client": "Sufi Threads",
+    "pages_opened": 4,
+    "verdict": "PASS",
+    "issues": [],
+    "agent_stop": "completed",
+    "report": "runs/sample-run/watch-sufi-threads/report.md"
+   }
+  },
+  {
+   "id": "noor-bookings",
+   "title": "NOOR · BOOKINGS (read-only)",
+   "status": "DRAFT READY",
+   "model": "Haiku (pinned)",
+   "cost_usd": 0.0021,
+   "cap_usd": 0.3,
+   "time_s": 11.5,
+   "cap_s": 360,
+   "result": "15 bookings tomorrow · 5 unconfirmed · 5 drafts · rows changed: 0",
+   "needs_decision": [
+    "Receptionist approves or edits 5 reschedule drafts for Noor Dental Clinic (nothing sent)"
+   ],
+   "risks": [],
+   "facts": {
+    "bookings_tomorrow": 15,
+    "unconfirmed": 5,
+    "drafts": 5,
+    "booking_rows_changed": 0,
+    "other_tools_called": [],
+    "summary": "Tomorrow has 15 active bookings, 5 unconfirmed. All 5 drafts are saved; nothing was changed or sent.\n\n- 22: 09:30 → 12:30 (Dr Sana)\n- 24: 10:00 → 09:30 (Hygienist)\n- 26: 11:00 → 14:30 (Dr Sana)\n- 32: 15:00 → 15:30 (Dr Sana)\n- 33: 15:30 → 16:00 (Hygienist)"
+   }
+  },
+  {
+   "id": "canary",
+   "title": "REGRESSION CANARY",
+   "status": "PASS",
+   "model": "no model (forced test)",
+   "cost_usd": 0.0,
+   "cap_usd": 0.0,
+   "time_s": 2.9,
+   "cap_s": 120,
+   "result": "secret-firewall blocked 3/3 (Write · Bash · PowerShell) · $0",
+   "needs_decision": [],
+   "risks": [],
+   "facts": {
+    "forced_test": true,
+    "model_calls": 0,
+    "blocked": 3,
+    "attempts": 3,
+    "files_written": [],
+    "tools": [
+     "Write",
+     "Bash",
+     "PowerShell"
+    ]
+   }
+  },
+  {
+   "id": "kit-versions",
+   "title": "KIT VERSIONS",
+   "status": "NEEDS YOU",
+   "model": "no model",
+   "cost_usd": 0.0,
+   "cap_usd": 0.0,
+   "time_s": 0.2,
+   "cap_s": 60,
+   "result": "latest kiran-core 1.1.0 · 2 of 3 clients behind · kit checks exit 0",
+   "needs_decision": [
+    "Upgrade Mehr Bakery and Noor Dental Clinic to kiran-core 1.1.0, or wait. Run the regression suite on the new version first"
+   ],
+   "risks": [],
+   "facts": {
+    "latest": "1.1.0",
+    "releases": 2,
+    "check_kit_exit": 0,
+    "clients_behind": [
+     "Mehr Bakery",
+     "Noor Dental Clinic"
+    ],
+    "pins": {
+     "Mehr Bakery": "1.0.0",
+     "Sufi Threads": "1.1.0",
+     "Noor Dental Clinic": "1.0.0"
+    },
+    "latest_adds": [
+     "New `proposal` skill (Episode 9)",
+     "`critic` agent"
+    ]
+   }
+  },
+  {
+   "id": "cost",
+   "title": "COST · this run's jobs",
+   "status": "PASS",
+   "model": "no model",
+   "cost_usd": 0.0,
+   "cap_usd": 0.0,
+   "time_s": 0.0,
+   "cap_s": 30,
+   "result": "8 jobs · $0.02 of $2.00 cap · 0 hit a cap",
+   "needs_decision": [],
+   "risks": [],
+   "facts": {
+    "jobs": 8,
+    "total_usd": 0.0153,
+    "run_cap_usd": 2.0,
+    "jobs_at_a_cap": [],
+    "jobs_over_80pct_of_cap": [],
+    "credential": "subscription login: local estimate at list price, not a bill",
+    "per_job": {
+     "report-mehr-bakery": 0.0023,
+     "report-sufi-threads": 0.0024,
+     "report-noor-dental": 0.0023,
+     "watch-mehr-bakery": 0.0028,
+     "watch-sufi-threads": 0.0034,
+     "noor-bookings": 0.0021,
+     "canary": 0.0,
+     "kit-versions": 0.0
+    }
+   }
+  }
+ ]
+}

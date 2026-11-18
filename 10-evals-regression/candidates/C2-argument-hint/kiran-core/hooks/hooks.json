@@ -1,0 +1,19 @@
+{
+  "description": "Kiran Studio guardrails. secret-firewall: Write|Edit|Bash|PowerShell. commit-gate: Bash|PowerShell.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/secret-firewall.sh\"" }
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/scripts/commit-gate.sh\"" }
+        ]
+      }
+    ]
+  }
+}

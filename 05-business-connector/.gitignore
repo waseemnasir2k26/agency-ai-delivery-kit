@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+noor-booking-app/bookings.db*
+noor-booking-app/*.json
+test-results/
+results/
+.env

@@ -1,0 +1,47 @@
+{
+  "_note": "FICTIONAL client reply, part 1 (the velvet kurta price was forgotten)",
+  "answers": {
+    "price-khaddar-suit": "PKR 6,500",
+    "price-embroidered-shawl": "PKR 4,200",
+    "launch-offer-go-ahead": "No offer for now.",
+    "launch-offer-terms": "None: no offer.",
+    "launch-offer-dates": "None: no offer.",
+    "fitting-hours": "Mon-Sat 12:00-19:00, by appointment",
+    "fitting-booking-details": "Name, phone, preferred day, item",
+    "enquiry-destination": "The shop's enquiry inbox through the site form (Kiran Studio form relay). No email address on the page.",
+    "go-live-date": "1 December",
+    "approver": "The owner of Sufi Threads",
+    "collection-photos": "No photos this round: text only.",
+    "collection-descriptions": "Khaddar suit: 3-piece, hand-finished. Embroidered shawl: wool, hand embroidery. Velvet kurta: lined, made to measure."
+  },
+  "data_patch": {
+    "winter": {
+      "prices": [
+        {
+          "item": "Khaddar suit",
+          "pkr": 6500
+        },
+        {
+          "item": "Embroidered shawl",
+          "pkr": 4200
+        }
+      ],
+      "updated": "2026-11-17"
+    },
+    "fittings": {
+      "hours": "Mon-Sat: 12:00-19:00 (by appointment)",
+      "form": {
+        "action": "/enquiry",
+        "method": "POST",
+        "fields": [
+          "name",
+          "phone",
+          "preferred_day",
+          "item"
+        ]
+      },
+      "enquiries_go_to": "Sufi Threads shop inbox, through the site form (Kiran Studio form relay, TEST)"
+    },
+    "offer": null
+  }
+}

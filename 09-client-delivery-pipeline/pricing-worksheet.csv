@@ -1,0 +1,11 @@
+row,tag,line,value,source
+1,MEASURED,AI run cost for this job (list-price estimate),,python pipeline.py summary --job <job> -> runs/<job>/cost-report.txt (TOTAL)
+2,MEASURE ON A REAL JOB,Human gate time x your hourly cost,,stopwatch at the four gates on your first real job x your hourly cost
+3,OWNER-ENTERED · EXAMPLE,Human build and fix time,,your records
+4,OWNER-ENTERED · EXAMPLE,Failed-run allowance,,your assumption (a run can go wrong)
+5,OWNER-ENTERED · EXAMPLE,Project management (including the wait for client answers),,your records
+6,OWNER-ENTERED · EXAMPLE,Hosting and integrations,,your records
+7,OWNER-ENTERED · EXAMPLE,Support,,your records
+8,OWNER-ENTERED · EXAMPLE,Overhead,,your records
+=,FLOOR,FLOOR = full cost of delivery (rows 1 to 8 added up),,sum of rows 1-8
++,MARGIN,MARGIN (your decision),,owner decision

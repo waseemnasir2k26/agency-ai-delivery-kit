@@ -1,0 +1,118 @@
+{
+  "run_id": "C1-mehr-bakery",
+  "client": "mehr-bakery",
+  "job": "site-refresh",
+  "setup": "C",
+  "setup_label": "ROUTED: Haiku reads/reports, Sonnet builds, judge on Opus, trimmed CLAUDE.md",
+  "status": "done",
+  "result_subtype": "success",
+  "exit_code": 0,
+  "critic_verdict": "REJECTED",
+  "permission_denials": [],
+  "wall_seconds": 34.6,
+  "caps": {
+    "max_budget_usd": 1.0,
+    "uncapped_test": false,
+    "max_turns": 25,
+    "timeout_seconds": 900,
+    "bg_wait_ceiling_ms": 0
+  },
+  "preflight": {
+    "checked": true,
+    "passed": true,
+    "problems": [],
+    "credential": "subscription",
+    "model": "claude-haiku-5-5",
+    "claude_code_version": "release used for the recording",
+    "loaded": {
+      "agents": [
+        "builder",
+        "critic",
+        "reader",
+        "reporter"
+      ],
+      "skills": [
+        "brand-voice",
+        "deploy-steps",
+        "pr-review"
+      ],
+      "workflow": true,
+      "hook": true
+    }
+  },
+  "checker_calls": 1,
+  "critic_note": "I checked sites/mehr-bakery/index.html against data/mehr-bakery.json one line at a time. Both opening-hours lines match: Mon-Sat 08:00-20:00 and Sun 10:00-14:00. Naan khatai (box) PKR 650 and Rusk (pack) PKR 300 also match. One price is wrong: Fruit cake shows PKR 1500 on the page, but the data file says PKR 1200. No files were edited.",
+  "critic_mismatches": [
+    "Fruit cake: page says PKR 1500, data file says PKR 1200"
+  ],
+  "workflow_agents": [
+    {
+      "agent": "builder",
+      "model": "claude-haiku-5-5",
+      "phase": "Build"
+    },
+    {
+      "agent": "critic",
+      "model": "claude-haiku-5-5",
+      "phase": "Critic"
+    },
+    {
+      "agent": "reader",
+      "model": "claude-haiku-5-5",
+      "phase": "Read"
+    },
+    {
+      "agent": "reporter",
+      "model": "claude-haiku-5-5",
+      "phase": "Report"
+    }
+  ],
+  "reporter_text": "NOT READY TO SHIP: critic rejected the build because the Fruit cake price on the page (PKR 1500) does not match data/mehr-bakery.json (PKR 1200).\n\nReport written to: reports/mehr-bakery-site-refresh.md\n\n- Requested: winter hours from data/mehr-bakery.json; Fruit cake PKR 1200 to PKR 1500.\n- Changed: hours set to Mon-Sat 08:00-20:00, Sun 10:00-14:00; Fruit cake set to PKR 1500; added \"Prices checked: 2026-11-02\". The data file still says 1200 and needs updating.\n- Checker: PASS 5/5.\n- Critic: REJECTED. Only mismatch is Fruit cake (page 1500 vs data 1200). Hours, Naan khatai and Rusk match.",
+  "agent_models": {
+    "reader": [
+      "haiku",
+      "low"
+    ],
+    "builder": [
+      "sonnet",
+      "medium"
+    ],
+    "critic": [
+      "opus",
+      "high"
+    ],
+    "reporter": [
+      "haiku",
+      "low"
+    ]
+  },
+  "main_model": "haiku",
+  "claude_md": "trimmed",
+  "cost_basis_note": "LOCAL ESTIMATE AT API LIST PRICE (subscription login), NOT A BILL",
+  "command": [
+    "claude.EXE",
+    "-p",
+    "/site-refresh for client mehr-bakery",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--model",
+    "haiku",
+    "--allowedTools",
+    "Workflow(site-refresh),Read,Glob,Edit(sites/**),Edit(reports/**),Bash(python check-site.py *)",
+    "--append-system-prompt",
+    "You are running an unattended, measured job. Run the site-refresh workflow exactly once, wait for it, then reply with its result: the critic verdict and the report path. Do not edit files, re-run stages or fix anything yourself; a human reviews the report.",
+    "--permission-prompts",
+    "none",
+    "--max-budget-usd",
+    "1.00",
+    "--max-turns",
+    "25",
+    "--setting-sources",
+    "project,local",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--no-session-persistence"
+  ]
+}

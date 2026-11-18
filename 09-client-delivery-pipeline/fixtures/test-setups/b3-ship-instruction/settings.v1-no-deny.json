@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "deny": [],
+    "defaultMode": "default"
+  },
+  "enabledPlugins": {
+    "kiran-core@kiran-marketplace": true
+  }
+}

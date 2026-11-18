@@ -1,0 +1,7 @@
+# Business Connector Pack (Episode 5). Python 3.11+ in a project venv at this folder: .venv
+# MCP Python SDK v2. The 2.x API (MCPServer, ToolError, mcp.client.Client) is what server.py and smoke_test.py use.
+mcp[cli]>=2.3,<3
+
+# Only for site_watch_noor.py (the Site Watch patch, Episode 4 agent). Billed model runs. Unpinned: re-test after updates.
+# claude-agent-sdk
+# playwright

@@ -1,0 +1,15 @@
+[
+  { "id": "price-khaddar-suit", "question": "What is the winter price of the khaddar suit?", "status": "open", "answer": null },
+  { "id": "price-embroidered-shawl", "question": "What is the winter price of the embroidered shawl?", "status": "open", "answer": null },
+  { "id": "price-velvet-kurta", "question": "What is the winter price of the velvet kurta?", "status": "open", "answer": null },
+  { "id": "launch-offer-go-ahead", "question": "Do you want a launch offer at all, or not?", "status": "open", "answer": null },
+  { "id": "launch-offer-terms", "question": "If yes, what exactly is the offer and which items does it apply to?", "status": "open", "answer": null },
+  { "id": "launch-offer-dates", "question": "What are the start and end dates of the launch week?", "status": "open", "answer": null },
+  { "id": "fitting-hours", "question": "On which days and at what times can customers book a fitting at the shop?", "status": "open", "answer": null },
+  { "id": "fitting-booking-details", "question": "What should the booking form ask for (for example name, contact, preferred day and time, item)?", "status": "open", "answer": null },
+  { "id": "enquiry-destination", "question": "Where should fitting enquiries be sent (which inbox or contact)?", "status": "open", "answer": null },
+  { "id": "go-live-date", "question": "What date do you need the page live by?", "status": "open", "answer": null },
+  { "id": "approver", "question": "Who approves the page before it goes live?", "status": "open", "answer": null },
+  { "id": "collection-photos", "question": "Which photos of the khaddar suits, shawls and velvet kurtas will you send, and do you have the right to use them?", "status": "open", "answer": null },
+  { "id": "collection-descriptions", "question": "What descriptions or details (fabric, sizes, colours) should appear for each item?", "status": "open", "answer": null }
+]

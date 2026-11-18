@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "mcp__noor-bookings-test__*"
+    ]
+  }
+}

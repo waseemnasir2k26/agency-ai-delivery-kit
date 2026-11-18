@@ -1,0 +1,27 @@
+# Policy matrix — role × action × data
+
+The table behind `TEAM-POLICY.md`. Two roles: **owner** (the policy owner, admin on the machine) and **freelancer** (a seat). Four answers: **read** · **change** · **ask** (a person decides each time) · **never**. The last column names the `policy_test.py` line that checks the cell; "—" means no automated test (a written rule only).
+
+| Data / action                                                            | Owner                      | Freelancer (with Claude Code)                         | Enforced by                                                    | Test line                       |
+| :----------------------------------------------------------------------- | :------------------------- | :---------------------------------------------------- | :------------------------------------------------------------- | :------------------------------ |
+| Project source files                                                     | read · change              | read · change                                         | sandbox write wall (project folder only)                       | T2b/T2c run inside it           |
+| `.env`, `.env.*`, `secrets/**` via Claude's file tools                   | read (outside Claude Code) | **never**                                             | managed deny `Read(./.env)` …                                  | T2a                             |
+| `.env` via a script Claude runs                                          | read (outside Claude Code) | **never**                                             | sandbox (file wall) + kiran-core secret-firewall hook          | T2b                             |
+| Send data to a host not on the list (shell)                              | —                          | **never**                                             | sandbox network, `allowManagedDomainsOnly`                     | T2c                             |
+| Fetch a web page Claude asks for (WebFetch)                              | —                          | **ask**                                               | managed rules only; project allow ignored                      | T1a                             |
+| `git push`                                                               | change                     | **ask** (a person, every time)                        | managed `ask` (Bash + PowerShell twins)                        | T1b                             |
+| Loosen a rule from a project's `.claude/settings.json`                   | —                          | **never** (ignored)                                   | `allowManagedPermissionRulesOnly`                              | T1a, T1b                        |
+| Skip permission prompts / auto mode                                      | —                          | **never**                                             | `disableBypassPermissionsMode`, `disableAutoMode`              | T5                              |
+| Run without a sandbox                                                    | —                          | **never** (Claude Code refuses to start)              | `sandbox.failIfUnavailable`, `allowUnsandboxedCommands: false` | T3                              |
+| Add a marketplace                                                        | change (managed file)      | **never**                                             | `strictKnownMarketplaces`                                      | T4a                             |
+| Add an MCP connector                                                     | change (managed file)      | **never**                                             | `allowedMcpServers` + `allowManagedMcpServersOnly`             | T4b                             |
+| Load a plugin from a folder (`--plugin-dir`), `--agents`, `--mcp-config` | change (eval machine only) | **never**                                             | `disableSideloadFlags`                                         | T4c                             |
+| Use the 4 `noor-bookings` tools                                          | read                       | read (allowed by name)                                | managed `allow` (4 names)                                      | preflight (connector connected) |
+| Run a mod that is not the organisation's                                 | —                          | **never**                                             | `pluginConfigs` → `allowManagedModsOnly`                       | —                               |
+| Edit the managed settings file                                           | change (admin)             | **never** (no admin rights on an agency-owned device) | OS file permissions; MDM on agency devices                     | —                               |
+| Read the activity record                                                 | read                       | —                                                     | collector access (owner decides)                               | —                               |
+
+Notes:
+
+- "Never" here means "blocked in our tests on WSL2", not a promise. See the limits in `TEAM-POLICY.md`.
+- The freelancer column assumes the freelancer has no admin rights. On a freelancer-owned laptop, a local admin can edit the managed file: the policy plus the test is the guardrail; MDM on an agency-owned laptop restores it.

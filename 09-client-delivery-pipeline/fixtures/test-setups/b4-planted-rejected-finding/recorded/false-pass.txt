@@ -1,0 +1,4 @@
+$ python build_report.py runs/b4 --check runs/b4/handcrafted.summary.md   (exit 1)
+checker: ACCEPTED 5 · REJECTED 1 · NOT CHECKED 1 · verdict PASS
+FAILED: "passed" where the counts disagree (1 line(s)):
+  > QA summary for Sufi Threads: all checks passed. The winter page is ready.

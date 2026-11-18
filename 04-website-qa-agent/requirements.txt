@@ -1,0 +1,3 @@
+# Site Watch (Episode 4). Unpinned on purpose: re-test after every SDK update (see SDK-NOTES.md).
+claude-agent-sdk
+playwright

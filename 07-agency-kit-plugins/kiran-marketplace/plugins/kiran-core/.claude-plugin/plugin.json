@@ -1,0 +1,8 @@
+{
+  "name": "kiran-core",
+  "version": "1.1.0",
+  "description": "Kiran Studio's shared delivery kit: proposal, client-report and pr-review skills, the critic agent, secret-firewall and commit-gate hooks.",
+  "author": {
+    "name": "Kiran Studio"
+  }
+}

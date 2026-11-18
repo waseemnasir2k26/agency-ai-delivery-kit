@@ -1,0 +1,16 @@
+{
+  "_comment": "EXAMPLE settings snippet from the Episode 10 suite. Fictional agency. Three parts: (1) the job model pinned by its FULL name, (2) the alias env block so 'haiku' / 'sonnet' cannot silently move to a later model, (3) the named-tool allow list for the booking case (06-noshow-cleanup): the four Noor booking tools by full name, no wildcard. On the eval machine part 3 lives in the managed policy (eval-machine/managed-settings.eval.json, allowManagedPermissionRulesOnly), because per-project allow rules are ignored there. Remove this _comment key before use if your tooling rejects unknown keys.",
+  "model": "claude-haiku-5-5",
+  "env": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "claude-haiku-5-5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-5-5"
+  },
+  "permissions": {
+    "allow": [
+      "mcp__plugin_kiran-noor_noor-bookings__list_tomorrow_bookings",
+      "mcp__plugin_kiran-noor_noor-bookings__find_available_slots",
+      "mcp__plugin_kiran-noor_noor-bookings__get_booking_summary",
+      "mcp__plugin_kiran-noor_noor-bookings__draft_reschedule"
+    ]
+  }
+}

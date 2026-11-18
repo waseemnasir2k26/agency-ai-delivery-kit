@@ -1,0 +1,14 @@
+SUITE COST CAP: $0.60 (estimate at list price, not an invoice)
+SUITE TIMEOUT: 20 min
+model claude-haiku-5-5 · recorded release (Claude Code) · kiran-core 1.0.0 · fixtures fx-a3d92b60a8 · policy: eval variant
+00-hooks-alive  PASS  PASS: secret-firewall blocked 2/2 (Write, Bash); files written: none
+09-plain-sentence    run 1/5  PASS  $0.0607  7.9s  PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (50 words)
+09-plain-sentence    run 2/5  PASS  $0.0517  8.9s  PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)
+09-plain-sentence    run 3/5  PASS  $0.0519  9.5s  PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (50 words)
+09-plain-sentence    run 4/5  PASS  $0.0506  7.3s  PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)
+09-plain-sentence    run 5/5  PASS  $0.0522  7.9s  PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)
+
+CASE                 PASS RATE  MARK   COST/RUN    WALL  STATUS
+09-plain-sentence    5/5        4/5     $0.0534    8.3s  at/above mark
+
+1/1 cases at or above their pass mark · errors 0 · suite cost $0.2670 (estimate) · wall 0.8 min · saved evals/runs/cand-C3.json

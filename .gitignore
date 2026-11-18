@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Secrets: never commit real keys
+.env
+.env.*
+!.env.example
+# The Episode 8 fixture key is fake on purpose and is part of the test
+!08-team-policy/fixture/sufi-threads/.env
+
+# Run output (each module writes its own runs here)
+runs/
+*.log
+*.db
+*.sqlite
+
+# Claude Code local state
+.claude/settings.local.json
+.claude/worktrees/
+.worktrees/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,35 @@
+**Subject: Your weekly report: Sufi Threads, 2–8 November 2026**
+
+Dear Sufi Threads team,
+
+This was a strong week. The winter shawl launch drew a lot of attention, and several of the improvements we made are already showing up in your orders. Here is the summary.
+
+**Highlights**
+
+- **Winter shawl collection launched.** It took 88 orders in the first weekend.
+- **WhatsApp order bot** answered 412 customer chats, so your team had fewer messages to handle by hand.
+- **Abandoned-cart emails** recovered 19 orders that would otherwise have been lost.
+- **Returns fell to 6%** after we added the size guide.
+- **Your collaboration post with the local weaver** reached 15,200 views.
+- **The homepage is faster.** Load time went from 4.1s to 2.3s, which makes it easier for visitors to stay and buy.
+
+**The numbers**
+
+| Metric | This week |
+|---|---|
+| Site visits | 3,120 |
+| Leads | 58 |
+| Orders | 204 |
+| Revenue | PKR 1,275,000 |
+
+**What's next**
+
+1. **Restock the embroidered scarves**, so you don't miss sales while they are out of stock.
+2. **Add Urdu product titles**, so more of your customers can find and understand your products.
+
+Thank you for a great week. If you'd like to talk through any of this, just reply to this email.
+
+Warm regards,
+Kiran Studio
+
+*Note: the skill's `data/$ARGUMENTS.json` file wasn't read from disk. I used the data that was passed in with the command. I haven't saved the report to a file or sent it to hello@sufithreads.example.*

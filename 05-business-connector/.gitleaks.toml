@@ -1,0 +1,9 @@
+# Secret scanner config for the Episode 5 demo (deterministic, no model).
+[extend]
+useDefault = true
+
+[[rules]]
+id = "noor-api-token"
+description = "Noor booking system API token (test fixture shape)"
+regex = '''noor_(test|desk|live)_[A-Za-z0-9_]{4,}'''
+keywords = ["noor_"]

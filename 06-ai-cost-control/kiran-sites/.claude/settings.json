@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Workflow(site-refresh)",
+      "Read",
+      "Edit(sites/**)",
+      "Edit(reports/**)",
+      "Bash(python check-site.py *)"
+    ],
+    "deny": [
+      "Bash(git push *)",
+      "Read(config/local.json)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python .claude/hooks/session_marker.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

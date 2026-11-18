@@ -1,0 +1,26 @@
+{
+  "id": "01-report-mehr",
+  "title": "Weekly client report: Mehr Bakery",
+  "origin": "E2 client-report",
+  "kind": "claude",
+  "prompt": "/kiran-core:client-report mehr-bakery",
+  "tools": [
+    "Skill",
+    "Read",
+    "Bash"
+  ],
+  "plugins": [
+    "kiran-core"
+  ],
+  "runs": 5,
+  "pass_mark": "4/5",
+  "must_pass": false,
+  "timeout_s": 240,
+  "max_budget_usd": 0.1,
+  "managed_allow": [
+    "Skill(kiran-core:client-report)",
+    "Bash(cat data/*)",
+    "PowerShell(cat data/*)"
+  ],
+  "check": "check.py"
+}

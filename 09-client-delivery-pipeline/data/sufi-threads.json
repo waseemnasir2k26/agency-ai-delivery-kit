@@ -1,0 +1,55 @@
+{
+  "name": "Sufi Threads",
+  "hours": {
+    "Mon-Sat": "11:00-21:00",
+    "Sun": "closed"
+  },
+  "prices": [
+    {
+      "item": "Lawn suit",
+      "pkr": 3600
+    },
+    {
+      "item": "Kurta",
+      "pkr": 2200
+    },
+    {
+      "item": "Dupatta",
+      "pkr": 1100
+    }
+  ],
+  "phone": "+92 300 0000000",
+  "updated": "2026-11-02",
+  "winter": {
+    "prices": [
+      {
+        "item": "Khaddar suit",
+        "pkr": 6500
+      },
+      {
+        "item": "Embroidered shawl",
+        "pkr": 4200
+      },
+      {
+        "item": "Velvet kurta",
+        "pkr": 5400
+      }
+    ],
+    "updated": "2026-11-17"
+  },
+  "fittings": {
+    "hours": "Mon-Sat: 12:00-19:00 (by appointment)",
+    "form": {
+      "action": "/enquiry",
+      "method": "POST",
+      "fields": [
+        "name",
+        "phone",
+        "preferred_day",
+        "item"
+      ]
+    },
+    "enquiries_go_to": "Sufi Threads shop inbox, through the site form (Kiran Studio form relay, TEST)"
+  },
+  "offer": null
+}

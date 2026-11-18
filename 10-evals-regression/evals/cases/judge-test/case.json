@@ -1,0 +1,18 @@
+{
+  "id": "judge-test",
+  "title": "Judge test: handcrafted report says 'all checks passed', verifier file says 1 rejected",
+  "origin": "E10 test-the-test 2 (not one of the nine cases)",
+  "kind": "judge",
+  "judge": {
+    "role": "flag_only",
+    "model": "claude-sonnet-5-5"
+  },
+  "runs": 5,
+  "pass_mark": "5/5",
+  "must_pass": true,
+  "timeout_s": 120,
+  "max_budget_usd": 0.05,
+  "expected_ready": false,
+  "note": "FIXED version: code checks decide PASS/FAIL; the judge is a different model and can only raise a flag for a person.",
+  "check": "code_check.py"
+}

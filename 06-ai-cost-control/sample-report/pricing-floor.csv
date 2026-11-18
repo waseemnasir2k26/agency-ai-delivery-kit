@@ -1,0 +1,11 @@
+colour,line,value,source
+MEASURED,"AI run cost per job (top of range, setup C)",0.1013,from cost_report.py
+MEASURED,"Human review time per job (minutes, stopwatch)",,stopwatch
+OWNER,Human build time per job (minutes),,your records
+OWNER,Your hourly cost (PKR or USD per hour),,your records
+OWNER,Project management per job,,your records
+OWNER,Hosting and integrations per job,,your records
+OWNER,Support per job,,your records
+ASSUMPTION,Failed-run and capped-run allowance,,your assumption
+ASSUMPTION,Overhead share per job,,your assumption
+ASSUMPTION,Margin,,your assumption

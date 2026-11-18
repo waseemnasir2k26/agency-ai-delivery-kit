@@ -1,0 +1,12 @@
+#!/bin/sh
+# Git pre-commit hook for HUMANS: the same check as the Claude commit-gate hook.
+# Install once per clone:  git config core.hooksPath git-hooks
+# Git hands this hook the index that WILL be committed, so `git commit -a` and
+# `git commit <paths>` are covered too. Skippable with --no-verify: it is a workflow gate.
+if command -v sha256sum >/dev/null 2>&1; then
+  sha=$(git diff --cached | sha256sum | cut -d' ' -f1)
+else
+  sha=$(git diff --cached | shasum -a 256 | cut -d' ' -f1)
+fi
+grep -q "\"diff_sha\": \"$sha\"" .claude/review.json 2>/dev/null && grep -q '"verdict": "approved"' .claude/review.json || {
+  echo "pre-commit: no matching approval for this staged diff. Run: bash scripts/run-review.sh" >&2; exit 1; }

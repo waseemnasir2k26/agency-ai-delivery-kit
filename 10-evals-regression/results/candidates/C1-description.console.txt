@@ -1,0 +1,20 @@
+SUITE COST CAP: $0.30 (estimate at list price, not an invoice)
+SUITE TIMEOUT: 20 min
+model claude-haiku-5-5 · recorded release (Claude Code) · kiran-core 1.0.1 · fixtures fx-a3d92b60a8 · policy: eval variant
+00-hooks-alive  PASS  PASS: secret-firewall blocked 2/2 (Write, Bash); files written: none
+01-report-mehr       run 1/5  PASS  $0.0024  5.2s  PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (48 words)
+01-report-mehr       run 2/5  PASS  $0.0025  7.3s  PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (44 words)
+01-report-mehr       run 3/5  PASS  $0.0023  6.1s  PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (52 words)
+01-report-mehr       run 4/5  PASS  $0.0025  7.2s  PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (47 words)
+01-report-mehr       run 5/5  PASS  $0.0023  6.7s  PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (51 words)
+09-plain-sentence    run 1/5  FAIL  $0.0038  11.8s  FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['15', '17', '4340']); FAIL <=150 words (191 wor
+09-plain-sentence    run 2/5  FAIL  $0.0034  11.4s  FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['15', '16', '17', '4344']); FAIL <=150 words (2
+09-plain-sentence    run 3/5  FAIL  $0.0032  10.3s  FAIL: skill NOT fired (Skill calls: none) | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['17']); ok <=150 words 
+09-plain-sentence    run 4/5  FAIL  $0.0034  10.8s  FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['17', '4340']); ok <=150 words (149 words)
+09-plain-sentence    run 5/5  FAIL  $0.0037  15.1s  FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['16', '17', '22', '4340']); FAIL <=150 words (2
+
+CASE                 PASS RATE  MARK   COST/RUN    WALL  STATUS
+01-report-mehr       5/5        4/5     $0.0024    6.5s  at/above mark
+09-plain-sentence    0/5        4/5     $0.0035   11.9s  BELOW MARK
+
+1/2 cases at or above their pass mark · errors 0 · suite cost $0.0295 (estimate) · wall 1.6 min · saved evals/runs/cand-C1.json

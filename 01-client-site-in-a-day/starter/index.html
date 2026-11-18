@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mehr Bakery, Lahore</title>
+  <meta name="description" content="Mehr Bakery is a family bakery in Lahore. See the sample menu and send an enquiry.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Family bakery &middot; Lahore</p>
+      <h1>Mehr Bakery</h1>
+      <p class="lead">Homemade cakes, cupcakes, cookies and festive boxes for birthdays and family gatherings.</p>
+      <p class="sells">Planning an event? Take a look at the sample menu below, then ask us anything.</p>
+      <div class="actions">
+        <a class="btn" href="#enquiry">Ask about an order</a>
+        <a class="btn ghost" href="tel:+923000000000">Call +92 300 0000000</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="scallop" aria-hidden="true"></div>
+
+  <main>
+    <section class="menu" id="menu">
+      <div class="wrap">
+        <h2>Our menu <span class="sample">SAMPLE</span></h2>
+        <p class="hint">Sample items and prices, for layout only.</p>
+        <ul class="menu-list">
+          <li class="item">
+            <div class="item-top"><h3>Birthday cake</h3><span class="price">Rs 3,200</span></div>
+            <p>Soft vanilla sponge, buttercream and a handwritten message.</p>
+            <span class="sample">SAMPLE</span>
+          </li>
+          <li class="item">
+            <div class="item-top"><h3>Chocolate cake</h3><span class="price">Rs 3,600</span></div>
+            <p>Rich, moist and dark, with chocolate ganache.</p>
+            <span class="sample">SAMPLE</span>
+          </li>
+          <li class="item">
+            <div class="item-top"><h3>Cupcakes, box of 6</h3><span class="price">Rs 1,500</span></div>
+            <p>Mixed flavours, nicely boxed for sharing.</p>
+            <span class="sample">SAMPLE</span>
+          </li>
+          <li class="item">
+            <div class="item-top"><h3>Butter cookies</h3><span class="price">Rs 900</span></div>
+            <p>Crisp, buttery cookies by the half dozen.</p>
+            <span class="sample">SAMPLE</span>
+          </li>
+          <li class="item">
+            <div class="item-top"><h3>Gulab jamun cake</h3><span class="price">Rs 3,800</span></div>
+            <p>A festive favourite with cardamom and syrup.</p>
+            <span class="sample">SAMPLE</span>
+          </li>
+          <li class="item">
+            <div class="item-top"><h3>Celebration box</h3><span class="price">Rs 2,500</span></div>
+            <p>A mix of our sweets for family visits and gifts.</p>
+            <span class="sample">SAMPLE</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="scallop" aria-hidden="true"></div>
+
+    <section id="enquiry">
+      <div class="wrap">
+        <h2>Ask about an order</h2>
+        <div class="banner"><strong>TEST MODE.</strong> Your message is saved only in this browser. It is not sent to the bakery.</div>
+
+        <form id="enquiry-form" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" aria-describedby="name-error">
+            <p class="error" id="name-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+92 300 0000000" aria-describedby="phone-error">
+            <p class="error" id="phone-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" maxlength="1000" aria-describedby="message-hint message-error"></textarea>
+            <p class="hint" id="message-hint"><span id="count">0</span> / 1000</p>
+            <p class="error" id="message-error" aria-live="polite"></p>
+          </div>
+          <button class="btn" type="submit">Send enquiry (test)</button>
+          <p class="status" id="status" role="status"></p>
+        </form>
+        <p><a href="inbox.html">View the test inbox</a></p>
+      </div>
+    </section>
+
+    <div class="scallop" aria-hidden="true"></div>
+
+    <section id="reviews">
+      <div class="wrap">
+        <h2>Kind words <span class="sample">SAMPLE</span></h2>
+        <blockquote class="review">
+          <p>&ldquo;The cake was lovely and everyone asked where it came from.&rdquo;</p>
+          <span class="sample">SAMPLE</span>
+        </blockquote>
+        <blockquote class="review">
+          <p>&ldquo;Easy to ask, quick to reply, and so pretty on the table.&rdquo;</p>
+          <span class="sample">SAMPLE</span>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Mehr Bakery &middot; +92 300 0000000 (placeholder number)</p>
+      <p>Sample content on a test site. <a href="inbox.html">Test inbox</a></p>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

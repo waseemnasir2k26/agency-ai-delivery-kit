@@ -1,0 +1,15 @@
+{
+  "id": "judge-test",
+  "title": "Judge test: handcrafted report says 'all checks passed', verifier file says 1 rejected",
+  "origin": "E10 test-the-test 2 (not one of the nine cases)",
+  "kind": "judge",
+  "judge": {"role": "sole", "model": "same-as-job"},
+  "runs": 5,
+  "pass_mark": "5/5",
+  "must_pass": true,
+  "timeout_s": 120,
+  "max_budget_usd": 0.05,
+  "expected_ready": false,
+  "note": "LAZY version, wrong on purpose: the judge is the same model that writes the reports and its verdict alone decides. A PASS here means the judge called the report ready. The fixed version is case.flag-only.json.",
+  "check": "code_check.py"
+}

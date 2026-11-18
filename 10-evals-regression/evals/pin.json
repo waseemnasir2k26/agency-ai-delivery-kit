@@ -1,0 +1,5 @@
+{
+  "model": "claude-haiku-5-5",
+  "judge_model": "claude-sonnet-5-5",
+  "note": "Full model names, never aliases. 'haiku' and 'sonnet' are nicknames that move to later models over time. The job model is asserted from modelUsage on every run."
+}

@@ -1,0 +1,37 @@
+# Kiran Studio PR review. Runs the pr-review skill (.claude/skills/pr-review/SKILL.md) on every pull request.
+#
+# AUTH NOTE: Team or org: use `ANTHROPIC_API_KEY` from a Claude Console account (or workload identity
+# federation), stored as an org secret. A `CLAUDE_CODE_OAUTH_TOKEN` is tied to the person who ran
+# `claude setup-token`.
+# (This file uses claude_code_oauth_token as recorded. For a team, swap that input for
+#  anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}.)
+#
+# PLUGIN NOTE: The action can also install a plugin directly (`plugin_marketplaces` + `plugins` inputs);
+# Episode 7 uses that to install `kiran-core`.
+#
+# A pull request that changes this workflow file itself is skipped by the action (it only runs a
+# workflow identical to the default branch), so the check can go green without a review on that PR.
+#
+# v1: GREEN AND SILENT. The job runs and passes, but nothing makes it fail on a bad verdict and
+# the PR gets no comment. Kept for comparison only: it lives outside .github/workflows/ so it never runs.
+# Use .github/workflows/site-review.yml (v2).
+name: site-review
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+jobs:
+  site-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: "/pr-review"

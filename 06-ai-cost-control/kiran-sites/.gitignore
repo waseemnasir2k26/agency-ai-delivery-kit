@@ -1,0 +1,6 @@
+config/local.json
+dist/
+.claude/run-state/
+check-calls.log
+stuck-calls.log
+reports/

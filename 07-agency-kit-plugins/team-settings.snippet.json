@@ -1,0 +1,13 @@
+{
+  "enabledPlugins": {
+    "kiran-core@kiran-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "kiran-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "<your-org>/kiran-marketplace"
+      }
+    }
+  }
+}

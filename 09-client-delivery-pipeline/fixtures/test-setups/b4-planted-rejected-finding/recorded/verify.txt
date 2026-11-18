@@ -1,0 +1,11 @@
+PLANTED finding appended to the run (label PLANTED): {"client": "sufi-threads", "check": "price", "status": "PASS", "expected": "Velvet kurta: PKR 5400", "seen_text": "Velvet kurta: PKR 5400 (launch week PKR 4900)", "evidence_url": "http://localhost:8099/sufi-threads/winter.html", "screenshot": "runs/b4/shots/02.png"}
+$ python verify.py runs/b4   (exit 0)
+[sufi-threads] model says hours PASS       -> ACCEPTED
+[sufi-threads] model says price PASS       -> ACCEPTED
+[sufi-threads] model says price PASS       -> ACCEPTED
+[sufi-threads] model says phone PASS       -> ACCEPTED
+[sufi-threads] model says button PASS      -> ACCEPTED (needs human: nothing machine-checkable)
+[sufi-threads] model says form PASS        -> ACCEPTED
+[sufi-threads] model says price PASS       -> REJECTED: quoted text is not on that page
+VERDICT sufi-threads: PASS
+TOTALS findings 7 · accepted 5 · rejected 1 · not checked 1 · verifier issues 0 -> b4/verify.json

@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Noor Dental · Front Desk</title>
+    <style>
+      :root {
+        --ink: #1d2433;
+        --muted: #6b7385;
+        --line: #e4e7ee;
+        --bg: #f6f7fa;
+        --card: #fff;
+        --teal: #0f766e;
+        --teal-soft: #e6f4f2;
+        --amber: #b45309;
+        --amber-soft: #fef3c7;
+        --red: #b91c1c;
+        --red-soft: #fee2e2;
+        --grey-soft: #eef0f4;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font:
+          15px/1.45 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      header {
+        background: var(--card);
+        border-bottom: 1px solid var(--line);
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .logo {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: var(--teal);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 18px;
+        margin: 0;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .spacer {
+        flex: 1;
+      }
+      .role {
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 99px;
+        background: var(--grey-soft);
+      }
+      .role.fd {
+        background: var(--teal-soft);
+        color: var(--teal);
+      }
+      .role.ro {
+        background: var(--amber-soft);
+        color: var(--amber);
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px 24px 80px;
+      }
+      .tabs {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .tab {
+        border: 1px solid var(--line);
+        background: var(--card);
+        padding: 7px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font: inherit;
+      }
+      .tab.on {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+      .stats {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px 16px;
+        min-width: 170px;
+      }
+      .stat b {
+        font-size: 26px;
+        display: block;
+      }
+      .stat span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--line);
+        vertical-align: top;
+      }
+      th {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+        background: #fafbfc;
+      }
+      tr:last-child td {
+        border-bottom: 0;
+      }
+      tr.cancelled td {
+        color: #9aa0ad;
+        text-decoration: line-through;
+      }
+      tr.cancelled td.st,
+      tr.cancelled td.act {
+        text-decoration: none;
+      }
+      tr.flash {
+        animation: flash 1.6s ease;
+      }
+      @keyframes flash {
+        from {
+          background: #fff3c4;
+        }
+        to {
+          background: transparent;
+        }
+      }
+      .chip {
+        font-size: 12px;
+        padding: 3px 9px;
+        border-radius: 99px;
+        white-space: nowrap;
+      }
+      .chip.confirmed {
+        background: var(--teal-soft);
+        color: var(--teal);
+      }
+      .chip.unconfirmed {
+        background: var(--amber-soft);
+        color: var(--amber);
+      }
+      .chip.cancelled {
+        background: var(--red-soft);
+        color: var(--red);
+      }
+      .chip.completed,
+      .chip.no-show {
+        background: var(--grey-soft);
+        color: var(--muted);
+      }
+      .note {
+        font-size: 12px;
+        color: var(--muted);
+        max-width: 260px;
+      }
+      .note.planted {
+        color: var(--red);
+        font-weight: 600;
+      }
+      button.act {
+        font: inherit;
+        font-size: 13px;
+        padding: 5px 10px;
+        border-radius: 7px;
+        border: 1px solid var(--line);
+        background: #fff;
+        cursor: pointer;
+        margin-right: 4px;
+      }
+      button.act:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      button.danger {
+        color: var(--red);
+      }
+      .login {
+        max-width: 460px;
+        margin: 60px auto;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 24px;
+      }
+      input,
+      select {
+        font: inherit;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        width: 100%;
+      }
+      .btn {
+        font: inherit;
+        background: var(--ink);
+        color: #fff;
+        border: 0;
+        border-radius: 8px;
+        padding: 9px 16px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .banner {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #1d2433;
+        color: #fff;
+        font-size: 13px;
+        padding: 8px 24px;
+        text-align: center;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .err {
+        color: var(--red);
+      }
+      dialog {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 20px;
+        max-width: 420px;
+        width: 90%;
+      }
+      .hidden {
+        display: none;
+      }
+      .right {
+        text-align: right;
+      }
+      @media (max-width: 700px) {
+        th:nth-child(5),
+        td:nth-child(5),
+        th:nth-child(7),
+        td:nth-child(7) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">N</div>
+      <div>
+        <h1>Noor Dental Clinic · Front Desk</h1>
+        <div class="sub">
+          Booking system (fictional clinic, synthetic test data)
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <span id="role" class="role hidden"></span>
+      <button id="signout" class="tab hidden" onclick="signOut()">
+        Sign out
+      </button>
+    </header>
+
+    <section id="loginBox" class="login hidden">
+      <h2 style="margin-top: 0">Sign in with a key</h2>
+      <p class="muted">
+        Paste a front-desk key (can change bookings) or the read-only connector
+        key (view only). Keys stay in this browser tab only.
+      </p>
+      <input
+        id="keyInput"
+        type="password"
+        placeholder="key"
+        autocomplete="off"
+      />
+      <button class="btn" onclick="signIn()">Sign in</button>
+      <p id="loginErr" class="err"></p>
+    </section>
+
+    <main id="app" class="hidden">
+      <div class="tabs">
+        <button class="tab" data-off="-1">Yesterday</button>
+        <button class="tab" data-off="0">Today</button>
+        <button class="tab on" data-off="1">Tomorrow</button>
+        <button class="tab" data-off="2">Day after</button>
+        <span class="spacer"></span>
+        <button class="tab" id="keysTab" onclick="showKeys()">Keys</button>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <b id="sTotal">–</b><span id="sTotalLbl">bookings tomorrow</span>
+        </div>
+        <div class="stat"><b id="sUnc">–</b><span>unconfirmed</span></div>
+        <div class="stat"><b id="sCan">–</b><span>cancelled</span></div>
+        <div class="stat">
+          <b id="sFree">–</b><span>free slots (Dr Sana)</span>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Time</th>
+            <th>Patient</th>
+            <th>Dentist</th>
+            <th>Treatment</th>
+            <th>Status</th>
+            <th>Patient note</th>
+            <th class="right">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p class="muted" id="updated"></p>
+
+      <section id="keysPanel" class="hidden" style="margin-top: 28px">
+        <h3>API keys</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>Role</th>
+              <th>Ends with</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Revoked</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="keyRows"></tbody>
+        </table>
+        <p id="newKey" class="muted"></p>
+      </section>
+    </main>
+
+    <dialog id="dlg">
+      <h3 id="dlgTitle" style="margin-top: 0">Reschedule</h3>
+      <p id="dlgText" class="muted"></p>
+      <select id="dlgSlot"></select>
+      <div
+        style="
+          margin-top: 14px;
+          display: flex;
+          gap: 8px;
+          justify-content: flex-end;
+        "
+      >
+        <button class="act" onclick="dlg.close()">Close</button>
+        <button class="btn" style="margin: 0" id="dlgOk">Reschedule</button>
+      </div>
+    </dialog>
+
+    <div class="banner">
+      Noor Dental Clinic, its patients and all data are fictional test fixtures.
+      Synthetic data. Not medical or legal advice.
+    </div>
+
+    <script>
+      const $ = (s) => document.querySelector(s);
+      let KEY = null,
+        ROLE = null,
+        OFF = 1,
+        lastSig = {};
+      try {
+        KEY = sessionStorage.getItem("noorKey");
+      } catch (e) {}
+      const dlg = $("#dlg");
+
+      function ymd(off) {
+        const d = new Date();
+        d.setDate(d.getDate() + off);
+        const p = (n) => String(n).padStart(2, "0");
+        return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+      }
+      async function api(path, opts = {}) {
+        const r = await fetch(path, {
+          ...opts,
+          headers: {
+            Authorization: "Bearer " + KEY,
+            "Content-Type": "application/json",
+          },
+        });
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok)
+          throw Object.assign(new Error(body.message || r.status), {
+            status: r.status,
+            body,
+          });
+        return body;
+      }
+      function esc(s) {
+        return String(s ?? "").replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      }
+
+      async function signIn() {
+        KEY = $("#keyInput").value.trim();
+        try {
+          await boot();
+          try {
+            sessionStorage.setItem("noorKey", KEY);
+          } catch (e) {}
+        } catch (e) {
+          $("#loginErr").textContent = e.message;
+          KEY = null;
+        }
+      }
+      function signOut() {
+        try {
+          sessionStorage.removeItem("noorKey");
+        } catch (e) {}
+        location.reload();
+      }
+
+      async function boot() {
+        const me = await api("/whoami");
+        ROLE = me.role;
+        $("#loginBox").classList.add("hidden");
+        $("#app").classList.remove("hidden");
+        $("#signout").classList.remove("hidden");
+        const r = $("#role");
+        r.classList.remove("hidden");
+        r.textContent = `${me.label} · ${me.role}`;
+        r.className = "role " + (me.can_change_bookings ? "fd" : "ro");
+        if (!me.can_change_bookings) $("#keysTab").classList.add("hidden");
+        await load();
+        setInterval(load, 3000);
+      }
+
+      async function load() {
+        const d = ymd(OFF);
+        const [b, s] = await Promise.all([
+          api("/bookings?date=" + d),
+          api("/slots?date=" + d + "&dentist=" + encodeURIComponent("Dr Sana")),
+        ]);
+        const label = {
+          "-1": "yesterday",
+          0: "today",
+          1: "tomorrow",
+          2: "day after",
+        }[OFF];
+        const active = b.bookings.filter((x) => x.status !== "cancelled");
+        $("#sTotal").textContent = active.length;
+        $("#sTotalLbl").textContent = "bookings " + label;
+        $("#sUnc").textContent = b.bookings.filter(
+          (x) => x.status === "unconfirmed",
+        ).length;
+        $("#sCan").textContent = b.bookings.filter(
+          (x) => x.status === "cancelled",
+        ).length;
+        $("#sFree").textContent = s.count;
+        const canChange = ROLE === "front-desk";
+        $("#rows").innerHTML =
+          b.bookings
+            .map((x) => {
+              const sig = x.status + x.start + x.note;
+              const changed = lastSig[x.id] && lastSig[x.id] !== sig;
+              lastSig[x.id] = sig;
+              const open =
+                x.status === "confirmed" || x.status === "unconfirmed";
+              const planted = /ignore|assistant/i.test(x.note);
+              const dis =
+                !canChange || !open
+                  ? 'disabled title="' +
+                    (canChange ? "not open" : "read-only key") +
+                    '"'
+                  : "";
+              return `<tr class="${x.status}${changed ? " flash" : ""}"><td>${x.id}</td><td>${x.time}</td><td>${esc(x.patient_name)}</td><td>${esc(x.dentist)}</td>
+      <td>${esc(x.treatment)}</td><td class="st"><span class="chip ${x.status}">${x.status}</span></td>
+      <td class="note ${planted ? "planted" : ""}">${esc(x.note)}</td>
+      <td class="act right"><button class="act" ${dis} onclick="resched(${x.id})">Reschedule</button><button class="act danger" ${dis} onclick="cancelB(${x.id})">Cancel</button></td></tr>`;
+            })
+            .join("") ||
+          `<tr><td colspan="8" class="muted">No bookings.</td></tr>`;
+        $("#updated").textContent =
+          "Live view · refreshes every 3 seconds · " + d;
+      }
+
+      async function cancelB(id) {
+        if (!confirm("Cancel booking #" + id + "?")) return;
+        try {
+          await api(`/bookings/${id}/cancel`, { method: "POST", body: "{}" });
+          load();
+        } catch (e) {
+          alert(e.message);
+        }
+      }
+      async function resched(id) {
+        const b = await api("/bookings/" + id);
+        const days = [0, 1, 2, 3].map(ymd);
+        const all = (
+          await Promise.all(
+            days.map((d) =>
+              api(`/slots?date=${d}&dentist=${encodeURIComponent(b.dentist)}`),
+            ),
+          )
+        ).flatMap((r) => r.slots);
+        $("#dlgText").textContent =
+          `#${id} ${b.patient_name} · ${b.dentist} · now ${b.date} ${b.time}`;
+        $("#dlgSlot").innerHTML = all
+          .map(
+            (s) =>
+              `<option value="${s.date} ${s.time}">${s.date} ${s.time}</option>`,
+          )
+          .join("");
+        $("#dlgOk").onclick = async () => {
+          try {
+            await api(`/bookings/${id}/reschedule`, {
+              method: "POST",
+              body: JSON.stringify({ start: $("#dlgSlot").value }),
+            });
+            dlg.close();
+            load();
+          } catch (e) {
+            alert(e.message);
+          }
+        };
+        dlg.showModal();
+      }
+      async function showKeys() {
+        const p = $("#keysPanel");
+        p.classList.toggle("hidden");
+        if (p.classList.contains("hidden")) return;
+        const k = await api("/keys");
+        $("#keyRows").innerHTML = k.keys
+          .map(
+            (
+              x,
+            ) => `<tr class="${x.status === "revoked" ? "cancelled" : ""}"><td>${esc(x.label)}</td><td>${esc(x.role)}</td><td>…${esc(x.ends_with)}</td>
+    <td class="st"><span class="chip ${x.status === "active" ? "confirmed" : "cancelled"}">${x.status}</span></td><td>${esc(x.created_at)}</td><td>${esc(x.revoked_at || "")}</td>
+    <td class="act">${x.status === "active" && x.label !== "front-desk" ? `<button class="act danger" onclick="rotate('${esc(x.label)}')">Revoke + issue new</button>` : ""}</td></tr>`,
+          )
+          .join("");
+      }
+      async function rotate(label) {
+        if (
+          !confirm("Revoke the current " + label + " key and issue a new one?")
+        )
+          return;
+        const r = await api("/keys/rotate", {
+          method: "POST",
+          body: JSON.stringify({ label }),
+        });
+        $("#newKey").textContent =
+          `New ${label} key issued (ends …${r.new_token_shown_once.slice(-4)}). Copy it from the API response into the machine's environment; it is not shown here in full.`;
+        $("#keysPanel").classList.add("hidden");
+        showKeys();
+      }
+      document.querySelectorAll(".tab[data-off]").forEach(
+        (t) =>
+          (t.onclick = () => {
+            document
+              .querySelectorAll(".tab[data-off]")
+              .forEach((x) => x.classList.remove("on"));
+            t.classList.add("on");
+            OFF = +t.dataset.off;
+            lastSig = {};
+            load();
+          }),
+      );
+      (async () => {
+        if (KEY) {
+          try {
+            await boot();
+            return;
+          } catch (e) {
+            KEY = null;
+          }
+        }
+        $("#loginBox").classList.remove("hidden");
+      })();
+      $("#keyInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") signIn();
+      });
+    </script>
+  </body>
+</html>

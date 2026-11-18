@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a visit · Noor Dental</title>
+<style>
+ body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#1d2433;background:#f6f7fa}
+ form{max-width:520px;margin:40px auto;background:#fff;border:1px solid #e4e7ee;border-radius:14px;padding:24px}
+ label{display:block;margin-top:12px;font-weight:600} input,textarea{font:inherit;width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid #e4e7ee;border-radius:8px}
+ textarea{min-height:110px} button{margin-top:16px;font:inherit;background:#0f766e;color:#fff;border:0;border-radius:8px;padding:10px 18px}
+ .ok{color:#0f766e}.err{color:#b91c1c}.foot{text-align:center;color:#6b7385;font-size:13px}
+</style></head><body>
+<form method="post" action="/site/book">
+ <h2 style="margin-top:0">Book a visit with Dr Sana</h2>
+ {{MESSAGE}}
+ <label for="name">Your name</label><input id="name" name="name" placeholder="Test Patient">
+ <label for="start">Preferred time (YYYY-MM-DD HH:MM)</label><input id="start" name="start" placeholder="2026-01-01 14:30">
+ <label for="notes">Notes for the clinic</label><textarea id="notes" name="notes" placeholder="Anything we should know?"></textarea>
+ <button type="submit">Request booking</button>
+</form>
+<p class="foot">Fictional clinic. Synthetic test data. Do not enter real personal details.</p>
+</body></html>

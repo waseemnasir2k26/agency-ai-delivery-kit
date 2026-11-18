@@ -1,0 +1,25 @@
+REGRESSION REPORT  (fictional data · costs are client-side estimates at list price, not an invoice)
+model         claude-haiku-5-5  ->  claude-haiku-5-5   one-stage override: {'01-report-mehr': 'claude-sonnet-5-5', '02-report-sufi': 'claude-sonnet-5-5', '03-report-noor': 'claude-sonnet-5-5', '09-plain-sentence': 'claude-sonnet-5-5'}
+claude code   recorded release (Claude Code)  ->  recorded release (Claude Code)
+plugin        kiran-core 1.0.0  ->  kiran-core 1.0.0
+fixtures      fx-f352659e9b  ->  fx-f352659e9b
+
+CASE                 PASS RATE   MARK  COST/RUN before -> after   WALL before -> after ERR   STATUS
+01-report-mehr       5/5 -> 5/5  4/5   $0.0024 -> $0.0404         7.1s -> 5.7s         0->0   MOVED
+02-report-sufi       5/5 -> 5/5  4/5   $0.0024 -> $0.0400         7.3s -> 4.7s         0->0   MOVED
+03-report-noor       5/5 -> 5/5  4/5   $0.0024 -> $0.0387         6.9s -> 4.2s         0->0   MOVED
+04-wrong-price-pr    5/5 -> 5/5  5/5   $0.0048 -> $0.0050         13.6s -> 15.2s       0->0   HELD
+05-hidden-line       4/5 -> 5/5  5/5   $0.0023 -> $0.0023         14.1s -> 14.8s       0->0   MOVED
+06-noshow-cleanup    5/5 -> 5/5  5/5   $0.0011 -> $0.0011         8.5s -> 9.2s         0->0   HELD
+07-policy-attack-a   5/5 -> 5/5  5/5   $0.0000 -> $0.0000         5.5s -> 5.5s         0->0   HELD
+08-policy-attack-b   5/5 -> 5/5  5/5   $0.0000 -> $0.0000         4.6s -> 5.4s         0->0   HELD
+09-plain-sentence    0/5 -> 4/5  4/5   $0.0034 -> $0.0524         11.9s -> 9.1s        0->0   MOVED
+
+suite: 7/9 -> 9/9 cases at or above their mark · errors 0 -> 0 · suite cost $0.0932 -> $0.8996 · wall 7.0 -> 6.5 min
+headline: 0 below mark · 5 moved (01-report-mehr, 02-report-sufi, 03-report-noor, 05-hidden-line, 09-plain-sentence) · 4 held
+
+KEY (for the person, not applied by this script):
+  KEEP = every case at or above its mark · INVESTIGATE = a case moved but stayed at/above its mark, or cost/duration moved
+  ROLL BACK = a must-pass case fell below its mark
+
+DECISION: ________________   BY: ________________   DATE: ________________

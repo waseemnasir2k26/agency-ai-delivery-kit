@@ -1,0 +1,11 @@
+--- kiran-core/skills/client-report/SKILL.md
++++ candidates/C2-argument-hint/kiran-core/skills/client-report/SKILL.md
+@@ -1,7 +1,7 @@
+ ---
+ name: client-report
+ description: Write the weekly client report for a Kiran Studio client from its data file.
+-argument-hint: [client-slug]
++argument-hint: [client]
+ allowed-tools: Read
+ ---
+ 

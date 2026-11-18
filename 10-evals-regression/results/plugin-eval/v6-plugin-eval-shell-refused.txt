@@ -1,0 +1,1 @@
+A shell tool (Bash or PowerShell) was granted but this machine cannot confine it (no sandbox backend on this platform, or it is not installed), so the run was refused rather than run unconfined — drop the shell grant, or on Linux/macOS install the backend. (this machine's managed settings: sandbox.autoAllowBashIfSandboxed would run commands the operator never granted)

@@ -1,0 +1,78 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "PowerShell(git push *)"
+    ],
+    "allow": [
+      "mcp__plugin_kiran-noor_noor-bookings__list_tomorrow_bookings",
+      "mcp__plugin_kiran-noor_noor-bookings__find_available_slots",
+      "mcp__plugin_kiran-noor_noor-bookings__get_booking_summary",
+      "mcp__plugin_kiran-noor_noor-bookings__draft_reschedule"
+    ],
+    "disableBypassPermissionsMode": "disable",
+    "disableAutoMode": "disable"
+  },
+  "allowManagedPermissionRulesOnly": true,
+  "strictKnownMarketplaces": [
+    {
+      "source": "directory",
+      "path": "/opt/kiran/kiran-marketplace"
+    }
+  ],
+  "extraKnownMarketplaces": {
+    "kiran-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "/opt/kiran/kiran-marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "kiran-core@kiran-marketplace": true,
+    "kiran-noor@kiran-marketplace": true
+  },
+  "disableSideloadFlags": true,
+  "pluginConfigs": {
+    "cc-plugin-sec-default@builtin": {
+      "options": {
+        "allowManagedModsOnly": true
+      }
+    }
+  },
+  "allowedMcpServers": [
+    {
+      "serverCommand": [
+        "/opt/kiran/bin/noor-bookings"
+      ]
+    }
+  ],
+  "allowManagedMcpServersOnly": true,
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "network": {
+      "allowedDomains": [
+        "registry.npmjs.org",
+        "github.com"
+      ],
+      "allowManagedDomainsOnly": true
+    },
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_METRICS_EXPORTER": "otlp",
+    "OTEL_EXPORTER_OTLP_PROTOCOL": "http/json",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "http://localhost:4318",
+    "OTEL_LOGS_EXPORT_INTERVAL": "1000",
+    "OTEL_RESOURCE_ATTRIBUTES": "team.id=kiran-studio,seat=freelancer-1"
+  }
+}

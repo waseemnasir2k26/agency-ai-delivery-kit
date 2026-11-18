@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>kiran</title>
+    <link rel="stylesheet" href="xterm.css" />
+    <style>
+      @font-face {
+        font-family: "Plex";
+        src: url(fonts/IBMPlexMono-500.woff2) format("woff2");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Plex";
+        src: url(fonts/IBMPlexMono-600.woff2) format("woff2");
+        font-weight: 700;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #161412;
+        overflow: hidden;
+      }
+      #t {
+        position: absolute;
+        inset: 22px 26px 18px 30px;
+      }
+      .xterm-viewport {
+        background: #161412 !important;
+        overflow: hidden !important;
+      }
+      .xterm-viewport::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="t"></div>
+    <script src="xterm.js"></script>
+    <script src="addon-fit.js"></script>
+    <script>
+      const FS = parseInt(
+        new URLSearchParams(location.search).get("fs") || "17",
+      );
+      document.title =
+        new URLSearchParams(location.search).get("title") || "kiran";
+      document.fonts.load(FS + "px Plex").then(() => {
+        const term = new Terminal({
+          fontFamily: "Plex, Consolas, monospace",
+          fontSize: FS,
+          lineHeight: 1.18,
+          cursorBlink: true,
+          cursorStyle: "block",
+          allowProposedApi: true,
+          scrollback: 5000,
+          convertEol: false,
+          theme: {
+            background: "#161412",
+            foreground: "#ECE4D6",
+            cursor: "#B5441E",
+            cursorAccent: "#161412",
+            selectionBackground: "#F2C46A88",
+            black: "#161412",
+            red: "#B5441E",
+            green: "#1F7A4A",
+            yellow: "#9A6A00",
+            blue: "#2B5EA8",
+            magenta: "#8A3F8F",
+            cyan: "#1F7A72",
+            white: "#6B6560",
+            brightBlack: "#7A746D",
+            brightRed: "#C9502A",
+            brightGreen: "#23874F",
+            brightYellow: "#A87700",
+            brightBlue: "#3468B8",
+            brightMagenta: "#9A4AA0",
+            brightCyan: "#23877E",
+            brightWhite: "#8A847C",
+          },
+        });
+        const fit = new FitAddon.FitAddon();
+        term.loadAddon(fit);
+        term.open(document.getElementById("t"));
+        fit.fit();
+        const ws = new WebSocket(
+          "ws://127.0.0.1:" +
+            (new URLSearchParams(location.search).get("ws") || "8931"),
+        );
+        ws.binaryType = "arraybuffer";
+        ws.onopen = () =>
+          ws.send(JSON.stringify({ size: [term.cols, term.rows] }));
+        ws.onmessage = (e) => {
+          if (typeof e.data === "string") {
+            const m = JSON.parse(e.data);
+            if (m.reset) {
+              term.reset();
+            }
+            if (m.d) term.write(m.d);
+          }
+        };
+        window.__term = term;
+      });
+    </script>
+  </body>
+</html>

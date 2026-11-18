@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "deny": [
+      "mcp__noor-bookings__cancel_appointment"
+    ],
+    "defaultMode": "default"
+  },
+  "extraKnownMarketplaces": {
+    "kiran-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "REPLACE-WITH-FULL-PATH-TO/deps/kiran-marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "kiran-core@kiran-marketplace": true
+  }
+}

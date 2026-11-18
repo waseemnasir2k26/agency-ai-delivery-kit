@@ -1,0 +1,10 @@
+rem ---- Windows Task Scheduler (shown in Episode 4, NOT executed in the demo) ----
+rem One line registers the nightly run (02:00 every day). Replace <project> with this folder's full path.
+schtasks /Create /TN "KiranStudio\SiteWatch" /TR "\"<project>\nightly.cmd\"" /SC DAILY /ST 02:00
+rem Remove it again:
+schtasks /Delete /TN "KiranStudio\SiteWatch" /F
+
+# ---- cron line for a Linux server (crontab -e), 02:00 every day ----
+# The key must be in the cron environment (cron does not read your shell profile). Keep it out of the crontab
+# itself: point to a file only the service user can read, e.g. /etc/sitewatch.env containing ANTHROPIC_API_KEY=...
+0 2 * * * . /etc/sitewatch.env && export ANTHROPIC_API_KEY && sh <project>/nightly.sh >> <project>/nightly.log 2>&1

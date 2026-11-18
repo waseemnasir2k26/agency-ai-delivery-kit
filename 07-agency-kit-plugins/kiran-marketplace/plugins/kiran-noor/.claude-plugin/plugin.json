@@ -1,0 +1,6 @@
+{
+  "name": "kiran-noor",
+  "version": "1.0.0",
+  "description": "Noor Dental Clinic connector: the noor-bookings MCP server with four read and draft tools. No key and no permission rules inside.",
+  "author": { "name": "Kiran Studio" }
+}

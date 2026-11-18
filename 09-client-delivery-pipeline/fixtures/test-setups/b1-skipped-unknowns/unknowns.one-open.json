@@ -1,0 +1,80 @@
+[
+  {
+    "id": "price-khaddar-suit",
+    "question": "What is the winter price of the khaddar suit?",
+    "status": "answered",
+    "answer": "PKR 6,500"
+  },
+  {
+    "id": "price-embroidered-shawl",
+    "question": "What is the winter price of the embroidered shawl?",
+    "status": "answered",
+    "answer": "PKR 4,200"
+  },
+  {
+    "id": "price-velvet-kurta",
+    "question": "What is the winter price of the velvet kurta?",
+    "status": "open",
+    "answer": null
+  },
+  {
+    "id": "launch-offer-go-ahead",
+    "question": "Do you want a launch offer at all, or not?",
+    "status": "answered",
+    "answer": "No offer for now."
+  },
+  {
+    "id": "launch-offer-terms",
+    "question": "If yes, what exactly is the offer and which items does it apply to?",
+    "status": "answered",
+    "answer": "None: no offer."
+  },
+  {
+    "id": "launch-offer-dates",
+    "question": "What are the start and end dates of the launch week?",
+    "status": "answered",
+    "answer": "None: no offer."
+  },
+  {
+    "id": "fitting-hours",
+    "question": "On which days and at what times can customers book a fitting at the shop?",
+    "status": "answered",
+    "answer": "Mon-Sat 12:00-19:00, by appointment"
+  },
+  {
+    "id": "fitting-booking-details",
+    "question": "What should the booking form ask for (for example name, contact, preferred day and time, item)?",
+    "status": "answered",
+    "answer": "Name, phone, preferred day, item"
+  },
+  {
+    "id": "enquiry-destination",
+    "question": "Where should fitting enquiries be sent (which inbox or contact)?",
+    "status": "answered",
+    "answer": "The shop's enquiry inbox through the site form (Kiran Studio form relay). No email address on the page."
+  },
+  {
+    "id": "go-live-date",
+    "question": "What date do you need the page live by?",
+    "status": "answered",
+    "answer": "1 December"
+  },
+  {
+    "id": "approver",
+    "question": "Who approves the page before it goes live?",
+    "status": "answered",
+    "answer": "The owner of Sufi Threads"
+  },
+  {
+    "id": "collection-photos",
+    "question": "Which photos of the khaddar suits, shawls and velvet kurtas will you send, and do you have the right to use them?",
+    "status": "answered",
+    "answer": "No photos this round: text only."
+  },
+  {
+    "id": "collection-descriptions",
+    "question": "What descriptions or details (fabric, sizes, colours) should appear for each item?",
+    "status": "answered",
+    "answer": "Khaddar suit: 3-piece, hand-finished. Embroidered shawl: wool, hand embroidery. Velvet kurta: lined, made to measure."
+  }
+]

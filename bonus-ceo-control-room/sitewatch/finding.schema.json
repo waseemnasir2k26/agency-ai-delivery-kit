@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "client": {
+      "type": "string",
+      "enum": ["mehr-bakery", "noor-dental", "sufi-threads"]
+    },
+    "check": {
+      "type": "string",
+      "description": "hours | price | phone | button | injection | other"
+    },
+    "status": { "type": "string", "enum": ["PASS", "FAIL"] },
+    "expected": {
+      "type": "string",
+      "description": "What data/<client>.json says"
+    },
+    "seen_text": {
+      "type": "string",
+      "description": "Exact text copied from the page, character for character"
+    },
+    "evidence_url": {
+      "type": "string",
+      "description": "URL of the page where seen_text appears"
+    },
+    "screenshot": {
+      "type": "string",
+      "description": "Screenshot path returned by visit/click for that page"
+    }
+  },
+  "required": [
+    "client",
+    "check",
+    "status",
+    "expected",
+    "seen_text",
+    "evidence_url",
+    "screenshot"
+  ]
+}

@@ -1,0 +1,2 @@
+{"setup": "D", "label": "ALL HAIKU: judge on Haiku too, trimmed CLAUDE.md (CONTROLLED TEST)", "main_model": "haiku", "claude_md": "trimmed", "checker": "normal",
+ "agents": {"reader": ["haiku", "low"], "builder": ["haiku", "low"], "critic": ["haiku", "low"], "reporter": ["haiku", "low"]}}

@@ -1,0 +1,48 @@
+# Kiran Studio PR review. Runs the pr-review skill (.claude/skills/pr-review/SKILL.md) on every pull request.
+#
+# AUTH NOTE: Team or org: use `ANTHROPIC_API_KEY` from a Claude Console account (or workload identity
+# federation), stored as an org secret. A `CLAUDE_CODE_OAUTH_TOKEN` is tied to the person who ran
+# `claude setup-token`.
+# (This file uses claude_code_oauth_token as recorded. For a team, swap that input for
+#  anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}.)
+#
+# PLUGIN NOTE: The action can also install a plugin directly (`plugin_marketplaces` + `plugins` inputs);
+# Episode 7 uses that to install `kiran-core`.
+#
+# A pull request that changes this workflow file itself is skipped by the action (it only runs a
+# workflow identical to the default branch), so the check can go green without a review on that PR.
+#
+# v2: --allowedTools names the inline-comment tool, --json-schema forces a verdict, and the last step
+# fails the check on anything but APPROVED. Make "site-review" a required status check on main
+# (branch protection) so a REJECTED verdict blocks the merge. Secret needed: see AUTH NOTE.
+name: site-review
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+jobs:
+  site-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+      - uses: anthropics/claude-code-action@v1
+        id: review
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: "/pr-review"
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment"
+            --json-schema '{"type":"object","properties":{"verdict":{"type":"string","enum":["APPROVED","REJECTED"]},"problems":{"type":"array","items":{"type":"string"}}},"required":["verdict","problems"]}'
+      - name: Gate on the verdict
+        if: fromJSON(steps.review.outputs.structured_output).verdict != 'APPROVED'
+        env:
+          VERDICT_JSON: ${{ steps.review.outputs.structured_output }}
+        run: |
+          echo "Review verdict: $VERDICT_JSON"
+          exit 1

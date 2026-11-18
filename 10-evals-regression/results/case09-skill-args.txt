@@ -1,0 +1,18 @@
+Case 09-plain-sentence: what the job model passed to the client-report skill (fictional data)
+source: the per-run stream files of the baseline and after-change suites (not shipped) (Skill tool_use input). The skill needs the short ID (slug) mehr-bakery for its data line: data/$ARGUMENTS.json
+
+[baseline · claude-haiku-5-5]
+run 1  args="Mehr Bakery, weekly update for the week ending <date>"  check=FAIL
+run 2  args="Mehr Bakery"  check=FAIL
+run 3  args="Mehr Bakery"  check=FAIL
+run 4  args="Mehr Bakery"  check=FAIL
+run 5  args="Mehr Bakery"  check=FAIL
+
+[after-change · claude-sonnet-5-5 (report stage switched)]
+run 1  args="Mehr Bakery"  check=PASS
+run 2  args="Mehr Bakery"  check=PASS
+run 3  args="Mehr Bakery"  check=FAIL
+run 4  args="Mehr Bakery"  check=PASS
+run 5  args="Mehr Bakery"  check=PASS
+
+Both tiers got the client NAME, so the skill's data line failed in every run. Haiku then found data/mehr-bakery.json itself but wrote a free-form update (no Wins section, figures not in the data, over 150 words): 0/5. Sonnet found the same file and kept the report format: 4/5. The switch did not fix the cause (name vs slug); it changed how the job copes with it.

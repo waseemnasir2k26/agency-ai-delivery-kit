@@ -1,0 +1,20 @@
+# Episode 5 · secret scanner before every commit (deterministic, no model).
+# Install once per clone:  pip install pre-commit  then  pre-commit install
+# Manual run on the staged commit:  pre-commit run gitleaks-system
+#
+# Uses the gitleaks binary already on the machine (Windows: winget install Gitleaks.Gitleaks), pinned 8.30.x,
+# the same command the Episode 5 capture ran:  gitleaks git --pre-commit --staged --config .gitleaks.toml
+# .gitleaks.toml (repo root) = default rules + the custom "noor-api-token" rule.
+#
+# Alternative without a local binary: the upstream "gitleaks" hook (language: golang, builds from source, needs Go).
+# Swap the hook id below to "gitleaks" to use it; rev stays pinned.
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks-system
+        args: ["--config", ".gitleaks.toml"]
+        # REQUIRED: upstream's gitleaks-system hook does not set this. Without it pre-commit appends the staged
+        # file names, gitleaks reads them as a repo path, errors ("cannot change to ...") and still reports
+        # "no leaks found" with exit 0, so the commit goes through. Tested with the pre-commit release used for the recording.
+        pass_filenames: false

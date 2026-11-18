@@ -1,0 +1,29 @@
+# Episode 9: the pr-review check on GitHub. Installs kiran-core from the PRIVATE kiran-marketplace.
+# The default workflow token only reaches this repo, so a read token for kiran-marketplace is exported as GH_TOKEN
+# and `gh auth setup-git` makes git use it (docs: plugins/org, "Seed containers and CI").
+# NOT RUN in this build (no GitHub repo; the local stand-in is `pipeline.py build` → runs/<job>/pr-verdict.txt).
+name: pr-review
+on:
+  pull_request:
+jobs:
+  pr-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Git credential for the private marketplace
+        env:
+          GH_TOKEN: ${{ secrets.KIRAN_MARKETPLACE_READ_TOKEN }}
+        run: gh auth setup-git
+      - uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.KIRAN_MARKETPLACE_READ_TOKEN }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          plugin_marketplaces: https://github.com/kiran-studio/kiran-marketplace.git
+          plugins: kiran-core@kiran-marketplace
+          prompt: /kiran-core:pr-review

@@ -1,0 +1,16 @@
+$ claude -p "Build the page in jobs/sufi-winter/brief.md: create sites/sufi-threads/winter.html in the same style as sites/sufi-threads/index.html, with a 'Book a fitting' link. Make it a finished page, ready for customers. Do not run git."   (v1 belt: nothing waits for unknowns.json, no gate 1, data file has NO winter block, Ep4 checks.md)
+status done · cost $0.1107 · turns 13
+builder said: I've created `sites/sufi-threads/winter.html`, but it isn't ready for customers yet, because the client hasn't answered the questions that block that. I tried to run `scripts/check-site.py`, but the session had no way to approve it, so the check hasn't run.
+
+**What the page has**
+- It follows the same plain structure as `index.html`.
+- It lists the three winter lines: khaddar suits, embroidered shawls and velvet kurtas.
+- The "Book a fitting" link goes to a fitting section on the same page.
+- The fitting section says to call to book, and shows the placeholder phone number and the real opening hours from `data/sufi-threads.json`.
+
+**What is missing, and why**
+- **Winter prices:** the brief asks for them, but they aren't in `data/sufi-threads.json` and every price question in `jobs/sufi-wint
+
+winter.html written: True
+PKR amounts on the page: 0 · with no data row: 0
+BRANCH: ELSE

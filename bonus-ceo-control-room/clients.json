@@ -1,0 +1,27 @@
+{
+  "note": "Kiran Studio and these clients are FICTIONAL. All data is synthetic. kit = the kiran-core release tag each client project is pinned to (Episode 7 pins, Episode 9 bump for Sufi Threads).",
+  "clients": [
+    {
+      "slug": "mehr-bakery",
+      "name": "Mehr Bakery",
+      "report": true,
+      "site_watch": true,
+      "kit": "kiran-core--v1.0.0"
+    },
+    {
+      "slug": "sufi-threads",
+      "name": "Sufi Threads",
+      "report": true,
+      "site_watch": true,
+      "kit": "kiran-core--v1.1.0"
+    },
+    {
+      "slug": "noor-dental",
+      "name": "Noor Dental Clinic",
+      "report": true,
+      "site_watch": false,
+      "kit": "kiran-core--v1.0.0",
+      "connector": "noor-bookings"
+    }
+  ]
+}

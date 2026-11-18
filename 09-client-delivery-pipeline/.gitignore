@@ -1,0 +1,9 @@
+.cfg/
+kiran-marketplace/
+.worktrees/
+dist/
+live/
+__pycache__/
+config/local.json
+release.key
+runs/

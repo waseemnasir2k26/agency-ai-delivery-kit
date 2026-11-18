@@ -1,0 +1,5 @@
+PLANTED line added to the captured winter page text: "Pashmina shawl: PKR 8800" (no row in data)
+$ python verify.py runs/b1-price-no-row   (exit 1)
+VERDICT sufi-threads: FAIL
+   - price with no data row: "Pashmina shawl: PKR 8800" (PKR 8800 is in no row of data/sufi-threads.json)
+TOTALS findings 0 · accepted 0 · rejected 0 · not checked 0 · verifier issues 1 -> b1-price-no-row/verify.json

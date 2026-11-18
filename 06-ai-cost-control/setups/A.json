@@ -1,0 +1,2 @@
+{"setup": "A", "label": "TODAY: every step = Opus, long CLAUDE.md", "main_model": "opus", "claude_md": "fat", "checker": "normal",
+ "agents": {"reader": ["opus", "high"], "builder": ["opus", "high"], "critic": ["opus", "high"], "reporter": ["opus", "high"]}}

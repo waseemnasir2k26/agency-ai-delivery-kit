@@ -1,0 +1,1 @@
+Stand-in for a screenshot. The kit ships no images; a real run writes runs/<run>/shots/NN.png here.

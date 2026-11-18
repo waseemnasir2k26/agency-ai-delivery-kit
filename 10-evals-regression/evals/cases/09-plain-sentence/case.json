@@ -1,0 +1,26 @@
+{
+  "id": "09-plain-sentence",
+  "title": "Plain sentence, no slash command: this week's update for Mehr Bakery",
+  "origin": "new (E10)",
+  "kind": "claude",
+  "prompt": "Write this week's update for Mehr Bakery.",
+  "tools": [
+    "Skill",
+    "Read",
+    "Bash"
+  ],
+  "plugins": [
+    "kiran-core"
+  ],
+  "runs": 5,
+  "pass_mark": "4/5",
+  "must_pass": false,
+  "timeout_s": 240,
+  "max_budget_usd": 0.1,
+  "managed_allow": [
+    "Skill(kiran-core:client-report)",
+    "Bash(cat data/*)",
+    "PowerShell(cat data/*)"
+  ],
+  "check": "check.py"
+}

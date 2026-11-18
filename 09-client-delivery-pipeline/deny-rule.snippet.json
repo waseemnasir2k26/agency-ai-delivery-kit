@@ -1,0 +1,9 @@
+{
+  "_comment": "SEATBELT, NOT THE LOCK. Merge into .claude/settings.json. The real go-live gate is a named person + a protected environment (go-live.yml). Probe four spellings: python pipeline.py / python ./pipeline.py / python3 / py.",
+  "permissions": {
+    "deny": [
+      "Bash(python pipeline.py go-live *)",
+      "PowerShell(python pipeline.py go-live *)"
+    ]
+  }
+}

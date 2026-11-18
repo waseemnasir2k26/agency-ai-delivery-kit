@@ -1,0 +1,33 @@
+name: validate-kit
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0            # check_kit.py and claude plugin tag need history and tags
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Claude Code (no sign-in or API key needed for validate/tag)
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Structure (warnings fail the build)
+        run: claude plugin validate . --strict
+      - name: Release check (plugin.json version vs marketplace entry version)
+        # tag compares VERSIONS, not names, and a plain dry run fails once the current version is tagged,
+        # so --force keeps unchanged-version PRs green. The name rule lives in check_kit.py.
+        # A client repo whose CI must fetch this PRIVATE marketplace needs a read token: env GH_TOKEN + `gh auth setup-git`.
+        run: |
+          for p in plugins/*/; do
+            claude plugin tag "$p" --dry-run --force
+          done
+      - name: One name + version bump + changelog rules
+        run: python ci/check_kit.py --base "origin/${{ github.base_ref || 'main' }}"

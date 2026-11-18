@@ -1,0 +1,22 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "num_turns": 2,
+  "terminal_reason": "completed",
+  "total_cost_usd": 0.022334600000000003,
+  "result": "{\"client\": \"Mehr Bakery\", \"week\": \"2026-11-02 to 2026-11-08\", \"wins\": [\"Eid-style gift box page launched; 21 orders in 3 days\", \"Instagram reel on sourdough reached 9,400 views\", \"Newsletter popup added; 63 signups\"], \"site_visits\": 1840, \"leads\": 73, \"revenue_pkr\": 486500, \"next\": \"Photograph winter menu\"}",
+  "structured_output": {
+    "client": "Mehr Bakery",
+    "week": "2026-11-02 to 2026-11-08",
+    "wins": [
+      "Eid-style gift box page launched; 21 orders in 3 days",
+      "Instagram reel on sourdough reached 9,400 views",
+      "Newsletter popup added; 63 signups"
+    ],
+    "site_visits": 1840,
+    "leads": 73,
+    "revenue_pkr": 486500,
+    "next": "Photograph winter menu"
+  }
+}

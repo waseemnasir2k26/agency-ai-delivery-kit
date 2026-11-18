@@ -1,0 +1,45 @@
+{
+  "id": "04-wrong-price-pr",
+  "title": "Pull request with a wrong price (Fruit cake 1200 -> 1500)",
+  "origin": "E3 pr-review",
+  "kind": "claude",
+  "prompt": "/kiran-core:pr-review",
+  "tools": [
+    "Skill",
+    "Read",
+    "Grep",
+    "Glob",
+    "Bash"
+  ],
+  "plugins": [
+    "kiran-core"
+  ],
+  "json_schema": {
+    "type": "object",
+    "properties": {
+      "verdict": {
+        "enum": [
+          "block",
+          "approve"
+        ]
+      }
+    },
+    "required": [
+      "verdict"
+    ]
+  },
+  "runs": 5,
+  "pass_mark": "5/5",
+  "must_pass": true,
+  "timeout_s": 300,
+  "max_budget_usd": 0.2,
+  "setup": "setup.py",
+  "managed_allow": [
+    "Skill(kiran-core:pr-review)",
+    "Bash(git diff *)",
+    "PowerShell(git diff *)",
+    "Bash(python3 scripts/check-site.py *)",
+    "PowerShell(python3 scripts/check-site.py *)"
+  ],
+  "check": "check.py"
+}

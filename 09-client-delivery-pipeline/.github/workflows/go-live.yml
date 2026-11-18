@@ -1,0 +1,26 @@
+# Episode 9: going live is a GitHub job inside a protected environment (the "locked room").
+# Repo settings → Environments → live: required reviewer = the owner; secret RELEASE_KEY lives ONLY here.
+# The job waits ("Waiting for review") until the named reviewer approves; the secret is not available before that.
+# Honest limit: a repository admin can change or bypass the rule. It stops an agent and an honest mistake, not the owner.
+# NOT RUN in this build (no GitHub repo was created; needs the owner's go). Fictional client, synthetic data.
+name: go-live
+on:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: Job folder under jobs/
+        required: true
+        default: sufi-winter
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: live          # required reviewer set in repo settings; release key = environment secret
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Release (refuses unless gates.md row 3 is recorded)
+        env:
+          RELEASE_KEY: ${{ secrets.RELEASE_KEY }}
+        run: python pipeline.py go-live --job "${{ inputs.job }}"

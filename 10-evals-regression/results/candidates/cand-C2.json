@@ -1,0 +1,221 @@
+{
+  "header": {
+    "label": "cand-C2",
+    "started_utc": "recorded run (date removed for the kit)",
+    "model_pinned": "claude-haiku-5-5",
+    "case_models": {},
+    "claude_code_version": "recorded release (Claude Code)",
+    "plugin": "kiran-core",
+    "plugin_version": "1.0.1",
+    "plugin_dir": "<project>/candidates/C2-argument-hint/kiran-core",
+    "plugin_description_client_report": "Write the weekly client report for a Kiran Studio client from its data file.",
+    "fixture_version": "fx-a3d92b60a8",
+    "runs_override": 5,
+    "max_suite_usd": 0.3,
+    "timeout_min": 20.0,
+    "bare": false,
+    "eval_machine_policy": "eval variant",
+    "preflight": {
+      "ok": true,
+      "line": "PASS: secret-firewall blocked 2/2 (Write, Bash); files written: none"
+    }
+  },
+  "summary": {
+    "cases": 2,
+    "at_or_above_mark": 1,
+    "must_pass_failed": [],
+    "suite_cost_usd": 0.0282,
+    "suite_wall_s": 86.3,
+    "errors": 0,
+    "total_runs": 10
+  },
+  "stopped": null,
+  "cases": {
+    "01-report-mehr": {
+      "title": "Weekly client report: Mehr Bakery",
+      "origin": "E2 client-report",
+      "kind": "claude",
+      "runs": 5,
+      "runs_planned": 5,
+      "passes": 5,
+      "pass_rate": "5/5",
+      "pass_mark": "4/5",
+      "must_pass": false,
+      "at_or_above_mark": true,
+      "mean_cost_usd": 0.002367,
+      "total_cost_usd": 0.011836,
+      "mean_wall_s": 6.5,
+      "errors": 0,
+      "run_detail": [
+        {
+          "run": 1,
+          "pass": true,
+          "check": "PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)",
+          "cost_usd": 0.002665,
+          "wall_s": 7.0,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 1,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "check": "PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (47 words)",
+          "cost_usd": 0.002399,
+          "wall_s": 6.8,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 1,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 3,
+          "pass": true,
+          "check": "PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (48 words)",
+          "cost_usd": 0.002322,
+          "wall_s": 7.0,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 1,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 4,
+          "pass": true,
+          "check": "PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (50 words)",
+          "cost_usd": 0.002242,
+          "wall_s": 6.1,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 1,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 5,
+          "pass": true,
+          "check": "PASS: ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (53 words)",
+          "cost_usd": 0.002208,
+          "wall_s": 5.5,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 1,
+          "extra_plugins": [],
+          "judge_ready": null
+        }
+      ]
+    },
+    "09-plain-sentence": {
+      "title": "Plain sentence, no slash command: this week's update for Mehr Bakery",
+      "origin": "new (E10)",
+      "kind": "claude",
+      "runs": 5,
+      "runs_planned": 5,
+      "passes": 0,
+      "pass_rate": "0/5",
+      "pass_mark": "4/5",
+      "must_pass": false,
+      "at_or_above_mark": false,
+      "mean_cost_usd": 0.003277,
+      "total_cost_usd": 0.016387,
+      "mean_wall_s": 9.9,
+      "errors": 0,
+      "run_detail": [
+        {
+          "run": 1,
+          "pass": false,
+          "check": "FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['16', '22']); FAIL <=150 words (159 words)",
+          "cost_usd": 0.003246,
+          "wall_s": 9.8,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 4,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 2,
+          "pass": false,
+          "check": "FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['17']); FAIL <=150 words (181 words)",
+          "cost_usd": 0.003266,
+          "wall_s": 9.5,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 4,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 3,
+          "pass": false,
+          "check": "FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['17', '4340']); FAIL <=150 words (206 words)",
+          "cost_usd": 0.003308,
+          "wall_s": 10.2,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 4,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 4,
+          "pass": false,
+          "check": "FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['15', '17']); FAIL <=150 words (206 words)",
+          "cost_usd": 0.003197,
+          "wall_s": 9.9,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 4,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 5,
+          "pass": false,
+          "check": "FAIL: skill fired | FAIL wins=3 (no Wins section); ok no-email (ok); FAIL numbers (missing=[] unknown=['15', '16', '17', '4340']); FAIL <=150 words (212 words)",
+          "cost_usd": 0.00337,
+          "wall_s": 10.3,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-haiku-5-5"
+          ],
+          "num_turns": 4,
+          "extra_plugins": [],
+          "judge_ready": null
+        }
+      ]
+    }
+  }
+}

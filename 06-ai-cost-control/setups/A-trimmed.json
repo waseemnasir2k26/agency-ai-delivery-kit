@@ -1,0 +1,2 @@
+{"setup": "AT", "label": "Setup A + trimmed CLAUDE.md", "main_model": "opus", "claude_md": "trimmed", "checker": "normal",
+ "agents": {"reader": ["opus", "high"], "builder": ["opus", "high"], "critic": ["opus", "high"], "reporter": ["opus", "high"]}}

@@ -1,0 +1,2 @@
+{"setup": "C", "label": "ROUTED: Haiku reads/reports, Sonnet builds, judge on Opus, trimmed CLAUDE.md", "main_model": "haiku", "claude_md": "trimmed", "checker": "normal",
+ "agents": {"reader": ["haiku", "low"], "builder": ["sonnet", "medium"], "critic": ["opus", "high"], "reporter": ["haiku", "low"]}}

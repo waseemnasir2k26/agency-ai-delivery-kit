@@ -1,0 +1,8 @@
+www/
+runs/
+logs/
+nightly.log
+__pycache__/
+.venv/
+.env
+samples/*/report.md

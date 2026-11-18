@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "mcp__noor-bookings__list_tomorrow_bookings",
+      "mcp__noor-bookings__find_available_slots",
+      "mcp__noor-bookings__get_booking_summary",
+      "mcp__noor-bookings__draft_reschedule"
+    ],
+    "deny": [
+      "mcp__noor-bookings__cancel_appointment",
+      "mcp__noor-bookings-test"
+    ]
+  }
+}

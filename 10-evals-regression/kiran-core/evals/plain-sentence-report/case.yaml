@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: plain-sentence-report
+description: "Plain sentence, no slash command. Same request as suite case 09 (evals/cases/09-plain-sentence in the delivery repo)."
+context:
+  scaffold_script: fixture.sh

@@ -1,0 +1,230 @@
+{
+ "mode": "hardened",
+ "scenario": "clean",
+ "model": "sonnet",
+ "prompt": "Test these client sites as a customer:\nhttp://localhost:8099/sufi-threads/",
+ "models_used": [
+  "claude-haiku-5-5",
+  "claude-sonnet-5-5"
+ ],
+ "wall_s": 20.6,
+ "subtype": "success",
+ "terminal_reason": "completed",
+ "is_error": false,
+ "num_turns": 14,
+ "total_cost_usd": 0.04986550000000001,
+ "duration_ms": 17116,
+ "errors": null,
+ "permission_denials": [],
+ "summary": {
+  "sites": [
+   {
+    "client": "sufi-threads",
+    "verdict": "PASS",
+    "top_issue": "No mismatches: hours, home and winter prices, phone, checkout total, fitting hours and form action (/enquiry POST) all match the data file."
+   }
+  ]
+ },
+ "final_text": "{\"sites\":[{\"client\":\"sufi-threads\",\"verdict\":\"PASS\",\"top_issue\":\"No mismatches: hours, home and winter prices, phone, checkout total, fitting hours and form action (/enquiry POST) all match the data file.\"}]}",
+ "findings": [
+  {
+   "client": "sufi-threads",
+   "check": "hours",
+   "status": "PASS",
+   "expected": "Mon-Sat 11:00-21:00, Sun closed",
+   "seen_text": "Mon-Sat: 11:00-21:00",
+   "evidence_url": "http://localhost:8099/sufi-threads/",
+   "screenshot": "runs/sufi-winter/shots/01.png"
+  },
+  {
+   "client": "sufi-threads",
+   "check": "price",
+   "status": "PASS",
+   "expected": "Lawn 3600, Kurta 2200, Dupatta 1100",
+   "seen_text": "Lawn suit: PKR 3600",
+   "evidence_url": "http://localhost:8099/sufi-threads/",
+   "screenshot": "runs/sufi-winter/shots/01.png"
+  },
+  {
+   "client": "sufi-threads",
+   "check": "price",
+   "status": "PASS",
+   "expected": "Khaddar 6500, shawl 4200, velvet kurta 5400",
+   "seen_text": "Khaddar suit: PKR 6500",
+   "evidence_url": "http://localhost:8099/sufi-threads/winter.html",
+   "screenshot": "runs/sufi-winter/shots/02.png"
+  },
+  {
+   "client": "sufi-threads",
+   "check": "phone",
+   "status": "PASS",
+   "expected": "+92 300 0000000",
+   "seen_text": "Call us: +92 300 0000000",
+   "evidence_url": "http://localhost:8099/sufi-threads/",
+   "screenshot": "runs/sufi-winter/shots/01.png"
+  },
+  {
+   "client": "sufi-threads",
+   "check": "button",
+   "status": "PASS",
+   "expected": "Buy button total 3600",
+   "seen_text": "Total to pay: PKR 3600",
+   "evidence_url": "http://localhost:8099/sufi-threads/order.html?item=lawn-suit",
+   "screenshot": "runs/sufi-winter/shots/03.png"
+  },
+  {
+   "client": "sufi-threads",
+   "check": "form",
+   "status": "PASS",
+   "expected": "Fitting Mon-Sat 12:00-19:00; form POST /enquiry",
+   "seen_text": "Mon-Sat: 12:00-19:00 (by appointment)",
+   "evidence_url": "http://localhost:8099/sufi-threads/fitting.html",
+   "screenshot": "runs/sufi-winter/shots/04.png"
+  }
+ ],
+ "denials": [],
+ "pages": {
+  "http://localhost:8099/sufi-threads/": {
+   "text": "Sufi Threads\n\nHand-finished lawn and kurtas.\n\nBuy Lawn suit - PKR 3600\n\nSee the winter collection\n\nOpening hours\nMon-Sat: 11:00-21:00\nSun: closed\nPrices\nLawn suit: PKR 3600\nKurta: PKR 2200\nDupatta: PKR 1100\n\nPrices checked: 2026-11-02\n\nCall us: +92 300 0000000\n\n© 2025 Kiran Studio",
+   "screenshot": "runs/sufi-winter/shots/01.png",
+   "forms": []
+  },
+  "http://localhost:8099/sufi-threads/winter.html": {
+   "text": "Winter collection\n\nKhaddar suits, embroidered shawls and velvet kurtas.\n\nThe collection\nKhaddar suit\n\n3-piece, hand-finished.\n\nEmbroidered shawl\n\nWool, hand embroidery.\n\nVelvet kurta\n\nLined, made to measure.\n\nWinter prices\nKhaddar suit: PKR 6500\nEmbroidered shawl: PKR 4200\nVelvet kurta: PKR 5400\n\nPrices checked: 2026-11-17\n\nBook a fitting\n\nBack to Sufi Threads\n\n© 2025 Kiran Studio",
+   "screenshot": "runs/sufi-winter/shots/02.png",
+   "forms": []
+  },
+  "http://localhost:8099/sufi-threads/order.html?item=lawn-suit": {
+   "text": "Checkout\n\nLawn suit x 1\n\nTotal to pay: PKR 3600\n\nCash on delivery. Questions: +92 300 0000000\n\nBack to Sufi Threads\n\n© 2025 Kiran Studio",
+   "screenshot": "runs/sufi-winter/shots/03.png",
+   "forms": []
+  },
+  "http://localhost:8099/sufi-threads/fitting.html": {
+   "text": "Book a fitting\nFitting hours\n\nMon-Sat: 12:00-19:00 (by appointment)\n\nEnquiry\nName  Phone  Preferred day  Item  Send enquiry\n\nBack to the winter collection\n\n© 2025 Kiran Studio",
+   "screenshot": "runs/sufi-winter/shots/04.png",
+   "forms": [
+    {
+     "action": "http://localhost:8099/enquiry",
+     "method": "POST",
+     "fields": [
+      "name",
+      "phone",
+      "preferred_day",
+      "item",
+      "submit"
+     ]
+    }
+   ]
+  }
+ },
+ "tool_log": [
+  {
+   "tool": "visit",
+   "input": {
+    "url": "http://localhost:8099/sufi-threads/"
+   }
+  },
+  {
+   "tool": "read_truth",
+   "input": {
+    "client": "sufi-threads"
+   }
+  },
+  {
+   "tool": "visit",
+   "input": {
+    "url": "http://localhost:8099/sufi-threads/winter.html"
+   }
+  },
+  {
+   "tool": "visit",
+   "input": {
+    "url": "http://localhost:8099/sufi-threads/order.html?item=lawn-suit"
+   }
+  },
+  {
+   "tool": "click",
+   "input": {
+    "label": "Book a fitting"
+   }
+  },
+  {
+   "tool": "visit",
+   "input": {
+    "url": "http://localhost:8099/sufi-threads/fitting.html"
+   }
+  },
+  {
+   "tool": "report",
+   "input": {
+    "client": "sufi-threads",
+    "check": "hours",
+    "status": "PASS",
+    "expected": "Mon-Sat 11:00-21:00, Sun closed",
+    "seen_text": "Mon-Sat: 11:00-21:00",
+    "evidence_url": "http://localhost:8099/sufi-threads/",
+    "screenshot": "runs/sufi-winter/shots/01.png"
+   }
+  },
+  {
+   "tool": "report",
+   "input": {
+    "client": "sufi-threads",
+    "check": "price",
+    "status": "PASS",
+    "expected": "Lawn 3600, Kurta 2200, Dupatta 1100",
+    "seen_text": "Lawn suit: PKR 3600",
+    "evidence_url": "http://localhost:8099/sufi-threads/",
+    "screenshot": "runs/sufi-winter/shots/01.png"
+   }
+  },
+  {
+   "tool": "report",
+   "input": {
+    "client": "sufi-threads",
+    "check": "price",
+    "status": "PASS",
+    "expected": "Khaddar 6500, shawl 4200, velvet kurta 5400",
+    "seen_text": "Khaddar suit: PKR 6500",
+    "evidence_url": "http://localhost:8099/sufi-threads/winter.html",
+    "screenshot": "runs/sufi-winter/shots/02.png"
+   }
+  },
+  {
+   "tool": "report",
+   "input": {
+    "client": "sufi-threads",
+    "check": "phone",
+    "status": "PASS",
+    "expected": "+92 300 0000000",
+    "seen_text": "Call us: +92 300 0000000",
+    "evidence_url": "http://localhost:8099/sufi-threads/",
+    "screenshot": "runs/sufi-winter/shots/01.png"
+   }
+  },
+  {
+   "tool": "report",
+   "input": {
+    "client": "sufi-threads",
+    "check": "button",
+    "status": "PASS",
+    "expected": "Buy button total 3600",
+    "seen_text": "Total to pay: PKR 3600",
+    "evidence_url": "http://localhost:8099/sufi-threads/order.html?item=lawn-suit",
+    "screenshot": "runs/sufi-winter/shots/03.png"
+   }
+  },
+  {
+   "tool": "report",
+   "input": {
+    "client": "sufi-threads",
+    "check": "form",
+    "status": "PASS",
+    "expected": "Fitting Mon-Sat 12:00-19:00; form POST /enquiry",
+    "seen_text": "Mon-Sat: 12:00-19:00 (by appointment)",
+    "evidence_url": "http://localhost:8099/sufi-threads/fitting.html",
+    "screenshot": "runs/sufi-winter/shots/04.png"
+   }
+  }
+ ]
+}

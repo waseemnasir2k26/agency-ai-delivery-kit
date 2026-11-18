@@ -1,0 +1,139 @@
+{
+  "duration_api_ms": 33234,
+  "stop_reason": "end_turn",
+  "session_id": "00000000-0000-0000-0000-000000000000",
+  "total_cost_usd": 0.10128951,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1722,
+    "cache_read_input_tokens": 26011,
+    "output_tokens": 372,
+    "output_tokens_details": {
+      "thinking_tokens": 98
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1722,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 372,
+        "cache_read_input_tokens": 26011,
+        "cache_creation_input_tokens": 1722,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1722
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-haiku-5-5": {
+      "inputTokens": 14,
+      "outputTokens": 2963,
+      "cacheReadInputTokens": 92201,
+      "cacheCreationInputTokens": 14577,
+      "webSearchRequests": 0,
+      "costUSD": 0.004805210000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1034,
+      "cacheCreationEphemeral5mInputTokens": 6868,
+      "cacheCreationEphemeral1hInputTokens": 7709,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 1470,
+      "cacheReadInputTokens": 28545,
+      "cacheCreationInputTokens": 10724,
+      "webSearchRequests": 0,
+      "costUSD": 0.044380499999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 143,
+      "cacheCreationEphemeral5mInputTokens": 10724,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 725,
+      "cacheReadInputTokens": 6314,
+      "cacheCreationInputTokens": 7265,
+      "webSearchRequests": 0,
+      "costUSD": 0.0521038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "cacheCreationEphemeral5mInputTokens": 7265,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "origin": {
+    "kind": "task-notification",
+    "producer": "session-task",
+    "runId": "sample"
+  },
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**Critic verdict: REJECTED**\n\nThe critic found one mismatch between the page and `data/mehr-bakery.json`:\n- Fruit cake: the page shows PKR 1500, the data file says PKR 1200.\n\nOpening hours, naan khatai (PKR 650), and rusk (PKR 300) match. `check-site.py` passed.\n\n**Report:** `reports/mehr-bakery-site-refresh.md` \n\nThe workflow ran once and I didn't edit anything. The Fruit cake price is still unresolved and needs a human decision on which value is correct before it ships.",
+  "ttft_ms": 1160,
+  "type": "result",
+  "duration_ms": 2254,
+  "uuid": "00000000-0000-0000-0000-000000000000",
+  "ttft_stream_ms": 685,
+  "time_to_request_ms": 13,
+  "first_content_frame_ms": 685,
+  "queued_turn_count": 0,
+  "result_index": 1,
+  "model_usage_since_last_result": {}
+}

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(python pipeline.py go-live *)",
+      "PowerShell(python pipeline.py go-live *)"
+    ],
+    "defaultMode": "default"
+  },
+  "extraKnownMarketplaces": {
+    "kiran-marketplace": {
+      "source": {
+        "source": "directory",
+        "path": "../07-agency-kit-plugins/kiran-marketplace"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "kiran-core@kiran-marketplace": true
+  }
+}

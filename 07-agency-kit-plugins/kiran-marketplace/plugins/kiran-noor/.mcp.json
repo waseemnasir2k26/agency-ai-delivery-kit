@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "noor-bookings": {
+      "type": "stdio",
+      "command": "${NOOR_PYTHON:-python}",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/server.py"],
+      "env": { "NOOR_API_TOKEN": "${NOOR_API_TOKEN}" }
+    }
+  }
+}

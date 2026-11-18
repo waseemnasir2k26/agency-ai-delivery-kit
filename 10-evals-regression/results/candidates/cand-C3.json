@@ -1,0 +1,130 @@
+{
+  "header": {
+    "label": "cand-C3",
+    "started_utc": "recorded run (date removed for the kit)",
+    "model_pinned": "claude-haiku-5-5",
+    "case_models": {
+      "09-plain-sentence": "claude-sonnet-5-5"
+    },
+    "claude_code_version": "recorded release (Claude Code)",
+    "plugin": "kiran-core",
+    "plugin_version": "1.0.0",
+    "plugin_dir": "<project>/kiran-core",
+    "plugin_description_client_report": "Write the weekly client report for a Kiran Studio client from its data file.",
+    "fixture_version": "fx-a3d92b60a8",
+    "runs_override": 5,
+    "max_suite_usd": 0.6,
+    "timeout_min": 20.0,
+    "bare": false,
+    "eval_machine_policy": "eval variant",
+    "preflight": {
+      "ok": true,
+      "line": "PASS: secret-firewall blocked 2/2 (Write, Bash); files written: none"
+    }
+  },
+  "summary": {
+    "cases": 1,
+    "at_or_above_mark": 1,
+    "must_pass_failed": [],
+    "suite_cost_usd": 0.267,
+    "suite_wall_s": 45.2,
+    "errors": 0,
+    "total_runs": 5
+  },
+  "stopped": null,
+  "cases": {
+    "09-plain-sentence": {
+      "title": "Plain sentence, no slash command: this week's update for Mehr Bakery",
+      "origin": "new (E10)",
+      "kind": "claude",
+      "runs": 5,
+      "runs_planned": 5,
+      "passes": 5,
+      "pass_rate": "5/5",
+      "pass_mark": "4/5",
+      "must_pass": false,
+      "at_or_above_mark": true,
+      "mean_cost_usd": 0.05341,
+      "total_cost_usd": 0.267048,
+      "mean_wall_s": 8.3,
+      "errors": 0,
+      "run_detail": [
+        {
+          "run": 1,
+          "pass": true,
+          "check": "PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (50 words)",
+          "cost_usd": 0.060712,
+          "wall_s": 7.9,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-sonnet-5-5"
+          ],
+          "num_turns": 5,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 2,
+          "pass": true,
+          "check": "PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)",
+          "cost_usd": 0.051722,
+          "wall_s": 8.9,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-sonnet-5-5"
+          ],
+          "num_turns": 5,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 3,
+          "pass": true,
+          "check": "PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (50 words)",
+          "cost_usd": 0.051859,
+          "wall_s": 9.5,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-sonnet-5-5"
+          ],
+          "num_turns": 5,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 4,
+          "pass": true,
+          "check": "PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)",
+          "cost_usd": 0.050562,
+          "wall_s": 7.3,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-sonnet-5-5"
+          ],
+          "num_turns": 5,
+          "extra_plugins": [],
+          "judge_ready": null
+        },
+        {
+          "run": 5,
+          "pass": true,
+          "check": "PASS: skill fired | ok wins=3 (3 bullets); ok no-email (ok); ok numbers (missing=[] unknown=[]); ok <=150 words (46 words)",
+          "cost_usd": 0.052193,
+          "wall_s": 7.9,
+          "subtype": "success",
+          "errored": false,
+          "model_usage_keys": [
+            "claude-sonnet-5-5"
+          ],
+          "num_turns": 5,
+          "extra_plugins": [],
+          "judge_ready": null
+        }
+      ]
+    }
+  }
+}
